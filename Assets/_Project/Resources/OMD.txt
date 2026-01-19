@@ -1,0 +1,497 @@
+BASIC EVENTS (1–20)
+
+1. Cold Night
+You are shaking from the cold
+
+Burn an item → ❤️ +1, 🍞 −1, 🔥 −1
+Endure → ❤️ −1, 🧠 −1
+
+2. Found a Can
+A rusty can with food inside
+
+Eat it → 🍞 +1, 🧠 −1
+Save it → 🔥 +1
+
+3. Bad Sleep
+The night was restless
+
+Sleep more → ❤️ +1, 🧠 −1
+Stay awake → ❤️ −1, 🔥 +1
+
+4. Strong Wind
+The wind cuts through you
+
+Find shelter → 🍞 −1
+Keep going → ❤️ −1
+
+5. Broken Shoes
+Every step hurts
+
+Fix them → 🍞 −1, ❤️ +1
+Ignore it → ❤️ −1
+
+6. Hunger
+Your stomach aches
+
+Eat everything → ❤️ +1, 🍞 −1
+Save food → 🧠 −1
+
+7. Darkness
+You can’t see anything
+
+Light a fire → 🔥 +1, 🍞 −1
+Wait it out → 🧠 −1
+
+8. Old Rags
+Dirty, but warm
+
+Use them → ❤️ +1
+Take them → 🍞 +1
+
+9. Rain
+You’re getting soaked
+
+Look for shelter → 🍞 −1
+Keep moving → ❤️ −1
+
+10. Exhaustion
+You’re running out of strength
+
+Rest → ❤️ +1, 🔥 −1
+Push on → ❤️ −1
+
+11. Old Backpack
+Mostly junk… but something useful
+
+Take it → 🍞 +1, 🧠 −1
+Leave it → 🔥 +1
+
+12. Empty Road
+Nothing happens.
+
+Walk → ❤️ −1
+Wait → 🧠 −1
+
+13. Draft
+Cold air seeps in
+
+Seal it → 🍞 −1, ❤️ +1
+Ignore it → ❤️ −1
+
+14. Found Water
+Cloudy, but drinkable
+
+Drink → ❤️ +1
+Save it → 🍞 +1
+
+15. Fear
+Anxiety creeps in
+
+Suppress it → 🧠 −1, 🔥 +1
+Give in → 🔥 −1
+
+16. Weakness
+Your body fails you
+
+Eat → 🍞 −1, ❤️ +1
+Endure → ❤️ −1
+
+17. Strange Noise
+Something cracked nearby
+
+Check it → 🧠 −1 / 🍞 +1 (50%)
+Hide → 🔥 −1
+
+18. Dust
+Breathing is hard
+
+Cover your face → 🍞 −1
+Ignore it → ❤️ −1
+
+19. Dream of the Past
+You remember your old life
+
+Dwell on it → 🧠 −1, 🔥 +1
+Forget it → 🧠 +1
+
+20. Small Find
+Something useful lies nearby
+
+Take it → 🍞 +1
+Move on → 🔥 +1
+
+🔸 MID EVENTS (21–40)
+21. Abandoned House
+Dark inside
+
+Explore → 🧠 −1, 🍞 +1
+Pass by → 🔥 +1
+
+22. Sudden Cold
+Temperature drops fast
+
+Make a fire → 🍞 −1, ❤️ +1
+Endure → ❤️ −1, 🧠 −1
+
+23. Footprints
+Someone was here
+
+Follow them → 🧠 −1 / 🍞 +1
+Avoid them → 🔥 −1
+
+24. Breakdown
+Something breaks.
+
+Fix it → 🍞 −1, 🔥 +1
+Abandon it → 🍞 −1
+
+25. Dark Thoughts
+Your mind spirals
+
+Fight them → 🧠 −1, 🔥 +1
+Give up → 🔥 −1
+
+26. Rare Food
+A lucky find
+
+Eat → ❤️ +1, 🔥 +1
+Save it → 🍞 +1
+
+27. Fog
+You can’t see far
+
+Move forward → 🧠 −1
+Wait → 🔥 −1
+
+28. Shelter
+You could stay here
+
+Stay → ❤️ +1, 🍞 −1
+Leave → ❤️ −1
+
+29. A Cry
+You hear someone scream
+
+Investigate → 🧠 −1 / ❤️ −1
+Ignore it → 🔥 −1
+
+30. Collapse
+The path is blocked
+
+Push through → ❤️ −1, 🔥 +1
+Go around → 🍞 −1
+
+31. Loneliness
+You are truly alone
+
+Accept it → 🧠 +1
+Fight it → 🧠 −1, 🔥 +1
+
+32. Old Campfire
+Cold ashes remain
+
+Reuse it → 🔥 +1
+Move on → 🔥 −1
+
+33. Pain
+Every movement hurts
+
+Lie down → ❤️ +1, 🔥 −1
+Keep moving → ❤️ −1
+
+34. Dampness
+Everything is wet
+
+Dry your gear → 🍞 −1, ❤️ +1
+Endure → ❤️ −1
+
+35. Doubt
+You hesitate
+
+Decide → 🔥 +1
+Hesitate → 🧠 −1
+
+36. Smell of Food
+You sense it nearby
+
+Search → 🧠 −1 / 🍞 +1
+Ignore → 🔥 −1
+
+37. Cold Gets Worse
+Conditions deteriorate.
+
+Prepare → 🍞 −1, ❤️ +1
+Hope for the best → ❤️ −1
+
+38. Silence
+Too quiet
+
+Wait → 🔥 −1
+Move → ❤️ −1
+
+39. Last Strength
+You must choose
+
+Make a push → ❤️ −1, 🔥 +1
+Stop → 🔥 −1
+
+40. Exhausted Mind
+Your thoughts blur
+
+Let go → 🧠 +1, 🔥 −1
+Force yourself → 🧠 −1
+
+🔺 RARE / CRITICAL EVENTS (41–50)
+
+41. Last Chance
+You are at the edge
+
+Take the risk → random ±2
+Give up → death
+
+42. Unexpected Warmth
+A rare moment of comfort
+
+Enjoy it → 🔥 +1
+Use it → ❤️ +1
+
+43. Loss
+Something is gone
+
+Accept it → 🧠 +1
+Resist it → 🧠 −1
+
+44. Empty Day
+Nothing happens.
+
+Get through it → ❤️ −1, 🔥 −1
+
+45. Hope
+You feel it rise
+
+Hold on → 🔥 +1
+Let go → 🧠 +1
+
+46. The Line
+Beyond this lies the unknown
+
+Cross it → ❤️ −1, 🔥 +1
+Turn back → 🔥 −1
+
+47. Last Food
+A painful decision
+
+Eat it → ❤️ +1, 🍞 −1
+Save it → 🔥 +1
+
+48. Stillness
+It presses on you
+
+Listen → 🧠 −1
+Ignore → 🔥 −1
+
+49. Distant Light
+You see it far away
+
+Go toward it → 🔥 +1 / ❤️ −1
+Stay → 🔥 −1
+
+50. The End Is Near
+You feel it coming
+
+Accept it → 🧠 +1
+Fight → ❤️ −1, 🔥 +1
+
+-----------------------------------------------------------
+
+ОБНОВЛЁННЫЙ ПУЛ ВЫБОРОВ (40)
+
+BODY — ТЕЛО
+
+1. Hardened Flesh
+Pain stopped surprising you.
+❤️ +1 / 🧠 −1
+
+2. Scarred but Alive
+Your body paid the price.
+❤️ +1 / 🍞 −1
+
+3. Endure the Cold
+You learned to suffer quietly.
+❤️ +1 / 🔥 −1
+
+4. Iron Will
+You forced your body forward.
+❤️ +2 / 🧠 −1
+
+5. Survival Instinct
+You chose strength over comfort.
+❤️ +2 / 🍞 −1
+
+6. Broken Limits
+You pushed too far.
+❤️ +3 / 🔥 −2
+
+🧠 MIND — РАЗУМ
+
+7. Clear Lessons
+You remembered what matters.
+🧠 +1 / ❤️ −1
+
+8. Hard Truths
+Knowledge came at a cost.
+🧠 +1 / 🍞 −1
+
+9. Let Go
+Hope distracted you.
+🧠 +1 / 🔥 −1
+
+10. Cold Logic
+You stopped trusting your body.
+🧠 +2 / ❤️ −1
+
+11. Calculated Risk
+You planned instead of hoping.
+🧠 +2 / 🍞 −1
+
+12. Mental Fracture
+Your mind grew sharper — and darker.
+🧠 +3 / 🔥 −2
+
+🍞 SUPPLIES — РЕСУРСЫ
+
+13. Hoarder
+You kept what you found.
+🍞 +1 / ❤️ −1
+
+14. Careful Planning
+Thinking replaced feeling.
+🍞 +1 / 🧠 −1
+
+15. Practical Choices
+Hope didn’t feed you.
+🍞 +1 / 🔥 −1
+
+16. Stockpiled
+You carried more than you should.
+🍞 +2 / 🧠 −1
+
+17. Ruthless Efficiency
+Waste was no longer an option.
+🍞 +2 / 🔥 −1
+
+18. Heavy Burden
+Your body paid for abundance.
+🍞 +3 / ❤️ −2
+
+🔥 HOPE — НАДЕЖДА
+
+19. Hold On
+You refused to give up.
+🔥 +1 / ❤️ −1
+
+20. Blind Faith
+Thinking slowed you down.
+🔥 +1 / 🧠 −1
+
+21. Empty Hands
+You believed more than you prepared.
+🔥 +1 / 🍞 −1
+
+22. Burning Inside
+Hope kept you moving.
+🔥 +2 / 🍞 −1
+
+23. Inner Fire
+Doubt weakened your focus.
+🔥 +2 / 🧠 −1
+
+24. Consumed
+Hope burned everything else away.
+🔥 +3 / ❤️ −2
+
+⚖️ MIXED — СМЕШАННЫЕ
+
+25. Through Pain
+You endured, but learned.
+❤️ +1 / 🔥 +1 / 🧠 −1
+
+26. Survival Lessons
+Knowledge made you cautious.
+🧠 +1 / 🍞 +1 / ❤️ −1
+
+27. Scavenger’s Luck
+Hope followed preparation.
+🍞 +1 / 🔥 +1 / 🧠 −1
+
+28. Balanced Suffering
+You adapted — unevenly.
+❤️ +1 / 🧠 +1 / 🍞 −1
+
+🛟 SAFETY — СПАСАТЕЛЬНЫЕ
+(появляются редко, без минусов)
+
+29. Keep Breathing
+You survived. That was enough.
+❤️ +1
+
+30. Stay Sane
+You held yourself together.
+🧠 +1
+
+31. Find Something
+You managed to keep one thing.
+🍞 +1
+
+32. Don’t Give Up
+You refused to fade.
+🔥 +1
+
+🎭 HIGH RISK — ВЫСОКИЙ РИСК
+
+33. Flesh Over Thought
+Your body endured what your mind could not.
+❤️ +4 / 🧠 −3
+
+34. Sharp but Hollow
+You understood — too well.
+🧠 +4 / 🍞 −3
+
+35. Everything Carried
+You survived at a physical cost.
+🍞 +4 / 🔥 −3
+
+36. Burning Obsession
+Hope became everything.
+🔥 +4 / ❤️ −3
+
+🌪 CHAOS — ХАОС (очень редко)
+
+37. Desperate Balance
+Nothing came without loss.
+❤️ +2 / 🧠 −1 / 🍞 −1
+
+38. Narrow Escape
+You focused too hard.
+🧠 +2 / ❤️ −1 / 🔥 −1
+
+39. Last Supplies
+You kept going — barely.
+🍞 +2 / 🧠 −1 / 🔥 −1
+
+40. Final Resolve
+You burned what remained.
+🔥 +2 / ❤️ −1 / 🍞 −1
+
+-------------------------------------------------
+
+Одной строкой, в зависимости от того, какой параметр стал 0:
+
+❤️ → “Your body couldn’t go any further.”
+
+🧠 → “Your mind finally broke.”
+
+🍞 → “There was nothing left.”
+
+🔥 → “You lost the will to continue.”
+
