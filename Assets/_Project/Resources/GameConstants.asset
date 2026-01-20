@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: GameConstants
   m_EditorClassIdentifier: Assembly-CSharp::GameConstants
   _statDefaultValue: 10
+  _lifeAddCooldownSeconds: 300
+  _energyStartQuantity: 5
+  _cardRotateDuration: 0.3

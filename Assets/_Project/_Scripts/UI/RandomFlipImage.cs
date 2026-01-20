@@ -4,6 +4,9 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class RandomFlipImage : MonoBehaviour
 {
+    [SerializeField] private bool _xFlip = true;
+    [SerializeField] private bool _yFlip = true;
+    
     private RectTransform _rectTransform;
 
     private void Awake()
@@ -21,8 +24,8 @@ public class RandomFlipImage : MonoBehaviour
     /// </summary>
     public void ApplyRandomFlip()
     {
-        bool flipX = Random.value > 0.5f;
-        bool flipY = Random.value > 0.5f;
+        bool flipX = _xFlip && Random.value > 0.5f;
+        bool flipY = _yFlip && Random.value > 0.5f;
 
         Vector3 scale = _rectTransform.localScale;
         scale.x = Mathf.Abs(scale.x) * (flipX ? -1f : 1f);

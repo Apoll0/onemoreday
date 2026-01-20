@@ -47,20 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/_Project/_Scripts/Managers/EnergyManager.cs" />
+    <Compile Include="Assets/_Project/_Scripts/Controllers/StatBlockController.cs" />
     <Compile Include="Assets/HM/HMSingleton/HMSingleton.cs" />
     <Compile Include="Assets/HM/HMTimeManager/SecurePlayerPrefs.cs" />
     <Compile Include="Assets/_Project/_Scripts/Managers/MainUIManager.cs" />
     <Compile Include="Assets/_Project/_Scripts/Extensions/SpriteRendererExtensions.cs" />
     <Compile Include="Assets/HM/HMSingleton/HMScriptableSingleton.cs" />
-    <Compile Include="Assets/_Project/_Scripts/UI/StatBlockController.cs" />
+    <Compile Include="Assets/_Project/_Scripts/UI/RandomSetImage.cs" />
     <Compile Include="Assets/_Project/_Scripts/Extensions/TransformExtension.cs" />
+    <Compile Include="Assets/_Project/_Scripts/Controllers/DayBlockController.cs" />
     <Compile Include="Assets/_Project/_Scripts/SO/GameConstants.cs" />
     <Compile Include="Assets/HM/HMTimeManager/HMTimeManager.cs" />
     <Compile Include="Assets/_Project/_Scripts/UI/RandomFlipImage.cs" />
     <Compile Include="Assets/SecurePlayerPrefs/Plugins/SecurePlayerPrefs/Demo/SecureplayerPrefsDemoClass.cs" />
+    <Compile Include="Assets/_Project/_Scripts/Controllers/ChoiceController.cs" />
     <Compile Include="Assets/_Project/_Scripts/Extensions/ArrayExtension.cs" />
     <Compile Include="Assets/_Project/_Scripts/Extensions/ListExtension.cs" />
     <Compile Include="Assets/SecurePlayerPrefs/Plugins/SecurePlayerPrefs/SecurePlayerPrefs.cs" />
+    <Compile Include="Assets/_Project/_Scripts/Controllers/StatBodyController.cs" />
     <Compile Include="Assets/_Project/_Scripts/Utils/MyDebug.cs" />
     <Compile Include="Assets/SecurePlayerPrefs/Plugins/SecurePlayerPrefs/Demo/SecurePlayerPrefsDemo.cs" />
     <Compile Include="Assets/_Project/_Scripts/Extensions/ColorExtensions.cs" />

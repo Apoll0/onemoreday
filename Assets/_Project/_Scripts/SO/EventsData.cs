@@ -1,6 +1,7 @@
 using System;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [Serializable]
@@ -9,7 +10,7 @@ public class EventData
     public string picName;
     public string name;
     public string description;
-    public Decision[] decisions;
+    [FormerlySerializedAs("decisions")] public Choice[] choices;
     [HideInInspector] public Sprite sprite;
 
     public async void LoadImageAsync(Image image)
@@ -20,7 +21,7 @@ public class EventData
             return;
         }
     
-        var request = Resources.LoadAsync<Sprite>(picName);
+        var request = Resources.LoadAsync<Sprite>("Ills/" + picName);
         
         while (!request.isDone)
         {
@@ -41,39 +42,89 @@ public class EventData
 }
 
 [Serializable]
-public class Decision
+public class Choice
 {
     public string text;
+    [ShowIf("ShowDeath")]
+    [AllowNesting] 
+    public bool isDeath;
+    [ShowIf("ShowRandom2")]
+    [AllowNesting] 
+    public bool isRandom2;
+    [ShowIf("ShowStat")]
+    [AllowNesting] 
     public int bodyEffect;
+    [ShowIf("ShowStat")]
+    [AllowNesting] 
     public int mindEffect;
+    [ShowIf("ShowStat")]
+    [AllowNesting] 
     public int suppliesEffect;
+    [ShowIf("ShowStat")]
+    [AllowNesting] 
     public int hopeEffect;
+    
+    public bool ShowStat() { return (!isDeath && !isRandom2); }
+    public bool ShowRandom2 => !isDeath;
+    public bool ShowDeath => !isRandom2;
 }
 
 [CreateAssetMenu(fileName = "EventsData", menuName = "Scriptable Objects/EventsData")]
 public class EventsData : HMScriptableSingleton<EventsData>
 {
     [SerializeField] private EventData[] _basicEvents;
+    [SerializeField] private EventData[] _rareEvents;
 
     #region Public Methods
 
     public EventData GetRandomBasicEvent()
     {
-        if (_basicEvents == null || _basicEvents.Length == 0)
+        return GetRandomEvent(_basicEvents);
+    }
+
+    public EventData GetRandomRareEvent()
+    {
+        return GetRandomEvent(_rareEvents);
+    }
+    
+    #endregion
+
+    #region Private Methods
+
+    private EventData GetRandomEvent(EventData[] eventsArray)
+    {
+        if (eventsArray == null || eventsArray.Length == 0)
         {
             MyDebug.LogRed("[EventsData] No events available.");
             return null;
         }
 
-        int randomIndex = UnityEngine.Random.Range(0, _basicEvents.Length);
-        var eventData =  _basicEvents[randomIndex];
-        return eventData;
+        int randomIndex = UnityEngine.Random.Range(0, eventsArray.Length);
+        var eventData =  eventsArray[randomIndex];
+        var eventCopy = new EventData
+        {
+            picName = eventData.picName,
+            name = eventData.name,
+            description = eventData.description,
+            choices = new Choice[eventData.choices.Length]
+        };
+        
+        for (int i = 0; i < eventData.choices.Length; i++)
+        {
+            var choice = eventData.choices[i];
+            eventCopy.choices[i] = new Choice
+            {
+                text = choice.text,
+                bodyEffect = choice.bodyEffect,
+                mindEffect = choice.mindEffect,
+                suppliesEffect = choice.suppliesEffect,
+                hopeEffect = choice.hopeEffect
+            };
+        }
+        
+        return eventCopy;
     }
-
-    #endregion
-
-    #region Private Methods
-
+    
     [Button(enabledMode:EButtonEnableMode.Editor)]
     private void SaveNow()
     {

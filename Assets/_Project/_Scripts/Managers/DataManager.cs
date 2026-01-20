@@ -11,20 +11,35 @@ public enum StatType
 
 public class DataManager : HMSingleton<DataManager>
 {
+    #region Constants
+
+    private readonly string kCurrentDayPref = "CurrentDay";
+    private readonly string kMaxDayReached = "MaxDayReached";
+
+    #endregion
+
     public static event Action<StatType> OnStatChanged;
     
     #region Properties
     
     public int CurrentDay
     {
-        get => SecurePlayerPrefs.HasKey("CurrentDay") ? SecurePlayerPrefs.GetInt("CurrentDay") : 1;
+        get => SecurePlayerPrefs.HasKey(kCurrentDayPref) ? SecurePlayerPrefs.GetInt(kCurrentDayPref) : 1;
         set
         {
-            SecurePlayerPrefs.SetInt("CurrentDay", value);
+            SecurePlayerPrefs.SetInt(kCurrentDayPref, value);
+            if(value > MaxDayReached)
+                MaxDayReached = value;
             SecurePlayerPrefs.Save();
         }
     }
 
+    public int MaxDayReached
+    {
+        get => SecurePlayerPrefs.HasKey(kMaxDayReached) ? SecurePlayerPrefs.GetInt(kMaxDayReached) : 0;
+        private set => SecurePlayerPrefs.SetInt(kMaxDayReached, value);
+    }
+    
     #endregion
     
     public void SetStat(StatType stat, int value)
