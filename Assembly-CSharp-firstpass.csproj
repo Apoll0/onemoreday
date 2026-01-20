@@ -875,17 +875,26 @@
     <Reference Include="PsdPlugin">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.IK.Editor">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Collections">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
@@ -901,6 +910,9 @@
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.004">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.004.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Runtime">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
