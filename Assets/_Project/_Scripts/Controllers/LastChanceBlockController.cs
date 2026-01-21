@@ -38,6 +38,7 @@ public class LastChanceBlockController : MonoBehaviour
         //_supplyPic.SetActive(false);
         //_hopePic.SetActive(false);
         
+        _caption.gameObject.SetActive(true);
         switch (statType)
         {
             case StatType.Body:
@@ -68,7 +69,7 @@ public class LastChanceBlockController : MonoBehaviour
         {
             GameManager.Instance.EnableTouches();
             callback?.Invoke();
-            StartButtonAnimation();
+            StartVideoButtonAnimation();
         });
         
         _buttonsBlock.transform.DOLocalMove(_buttonsBlockLocalPos, GameConstants.CardRotateDuration / 2f);
@@ -84,7 +85,10 @@ public class LastChanceBlockController : MonoBehaviour
             callback?.Invoke();
         });
         
-        _buttonsBlock.transform.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration / 2f);
+        _buttonsBlock.transform.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration / 2f).OnComplete(() =>
+        {
+            _caption.gameObject.SetActive(false);
+        });
     }
     
     #endregion
@@ -97,9 +101,10 @@ public class LastChanceBlockController : MonoBehaviour
         _cardRotation.rotation = Quaternion.Euler(0f, 0f, 90f);
         
         _buttonsBlock.transform.Translate(new Vector3(0, -1500f, 0f));
+        _caption.gameObject.SetActive(false);
     }
 
-    private void StartButtonAnimation()
+    private void StartVideoButtonAnimation()
     {
         _buttonAnimationTween =
             _progressBar.DOFillAmount(0, GameConstants.WaitLastChanceDuration).From(1).OnComplete(TimeIsOut);

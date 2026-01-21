@@ -39,16 +39,21 @@ public class GameManager : HMSingleton<GameManager>
     private void Start()
     {
         Initialize();
+        
     }
 
     private void OnEnable()
     {
         ChoiceController.OnMadeChoice += OnMadeChoice;
+        LastChanceBlockController.OnOneMoreDayTriggered += OnOneMoreDayTriggered;
+        LastChanceBlockController.OnNoThanksTriggered += NoThanksTriggered;
     }
     
     private void OnDisable()
     {
         ChoiceController.OnMadeChoice -= OnMadeChoice;
+        LastChanceBlockController.OnOneMoreDayTriggered -= OnOneMoreDayTriggered;
+        LastChanceBlockController.OnNoThanksTriggered -= NoThanksTriggered;
     }
 
     #endregion
@@ -124,25 +129,8 @@ public class GameManager : HMSingleton<GameManager>
             choice.hopeEffect *= GetFactor();
         }
     }
-    
-    private void OnMadeChoice(ChoiceController choiceController)
-    {
-        MyDebug.Log("[GameManager] Made choice " + choiceController.ChoiceIndex);
-        var choice = _currentEventData.choices[choiceController.ChoiceIndex];
-        
-        DataManager.Instance.SetStat(StatType.Body, DataManager.Instance.GetStat(StatType.Body) + choice.bodyEffect);
-        DataManager.Instance.SetStat(StatType.Mind, DataManager.Instance.GetStat(StatType.Mind) + choice.mindEffect);
-        DataManager.Instance.SetStat(StatType.Supplies, DataManager.Instance.GetStat(StatType.Supplies) + choice.suppliesEffect);
-        DataManager.Instance.SetStat(StatType.Hope, DataManager.Instance.GetStat(StatType.Hope) + choice.hopeEffect);
-        
-        // TODO: Поправить статы. Анимировать стрелки в цифры. Анимировать статы на экране.
-        DisableTouches();
-        _mainUIManager.OpenArrowsOnCurrentDayBlock();
 
-        StartCoroutine(ChangeDayAfterChoiceCoroutine(choiceController.ChoiceIndex == 0)); // 0 - left, 1 - right
-    }
-
-    private IEnumerator ChangeDayAfterChoiceCoroutine(bool toLeft)
+    private IEnumerator ChangeDayAfterChoiceCoroutine(bool toLeft, bool forceGameOver = false)
     {
         yield return new WaitForSeconds(GameConstants.StatChangeDuration);
         
@@ -150,10 +138,17 @@ public class GameManager : HMSingleton<GameManager>
         
         yield return  new WaitForSeconds(GameConstants.CardRotateDuration / 4f);
 
+        if (forceGameOver)
+        {
+            CurrentGameState = GameState.GameOver;
+            _mainUIManager.ShowLastChanceBlock(StatType.Body); // TODO: change to upgrade behavior
+            yield break;
+        }
+        
         if (!IsGameOver())
             BeginNewDay();
     }
-    
+
     private bool IsGameOver()
     {
         foreach (StatType statType in Enum.GetValues(typeof(StatType)))
@@ -167,6 +162,83 @@ public class GameManager : HMSingleton<GameManager>
             }
         }
         return false;
+    }
+
+    private void CorrectStatsFromZero()
+    {
+        foreach (StatType statType in Enum.GetValues(typeof(StatType)))
+        {
+            if (DataManager.Instance.GetStat(statType) <= 0)
+            {
+                DataManager.Instance.SetStat(statType, 1);
+            }
+        }
+    }
+
+    #endregion
+
+    #region Delegates
+
+    private void OnMadeChoice(ChoiceController choiceController)
+    {
+        MyDebug.Log("[GameManager] Made choice " + choiceController.ChoiceIndex);
+        var choice = _currentEventData.choices[choiceController.ChoiceIndex];
+
+        if (choice.isDeath)
+        {
+            // Handle death choice
+            DisableTouches();
+            StartCoroutine(ChangeDayAfterChoiceCoroutine(choiceController.ChoiceIndex == 0, true)); // 0 - left, 1 - right
+        }
+        else if (choice.isRandom2)
+        {
+            // add random effect +2 or -2
+            var plusOrMinus = UnityEngine.Random.value < 0.5f ? 2 : -2;
+            var statTypes = new StatType[] { StatType.Body, StatType.Mind, StatType.Supplies, StatType.Hope };
+            var randomStat = statTypes[UnityEngine.Random.Range(0, statTypes.Length)];
+            DataManager.Instance.SetStat(randomStat, DataManager.Instance.GetStat(randomStat) + plusOrMinus);
+            
+            // TODO: Поправить статы. Анимировать стрелки в цифры. Анимировать статы на экране.
+            DisableTouches();
+            // _mainUIManager.OpenArrowOnRandomStat(randomStat, plusOrMinus);
+            // TODO: Continue here!
+
+            StartCoroutine(ChangeDayAfterChoiceCoroutine(choiceController.ChoiceIndex == 0)); // 0 - left, 1 - right
+        }
+        else
+        {
+            DataManager.Instance.SetStat(StatType.Body, DataManager.Instance.GetStat(StatType.Body) + choice.bodyEffect);
+            DataManager.Instance.SetStat(StatType.Mind, DataManager.Instance.GetStat(StatType.Mind) + choice.mindEffect);
+            DataManager.Instance.SetStat(StatType.Supplies, DataManager.Instance.GetStat(StatType.Supplies) + choice.suppliesEffect);
+            DataManager.Instance.SetStat(StatType.Hope, DataManager.Instance.GetStat(StatType.Hope) + choice.hopeEffect);
+        
+            // TODO: Поправить статы. Анимировать стрелки в цифры. Анимировать статы на экране.
+            DisableTouches();
+            _mainUIManager.OpenArrowsOnCurrentDayBlock();
+
+            StartCoroutine(ChangeDayAfterChoiceCoroutine(choiceController.ChoiceIndex == 0)); // 0 - left, 1 - right
+        }
+    }
+
+    private void OnOneMoreDayTriggered()
+    {
+        MyDebug.Log("[GameManager] One more day triggered.");
+        _mainUIManager.HideLastChanceBlock(() =>
+        {
+            CurrentGameState = GameState.InGame;
+            CorrectStatsFromZero();
+            BeginNewDay();
+        });
+    }
+
+    private void NoThanksTriggered()
+    {
+        MyDebug.Log("[GameManager] No thanks triggered. Returning to main menu.");
+        _mainUIManager.HideLastChanceBlock(() =>
+        {
+            CurrentGameState = GameState.MainMenu;
+            _mainUIManager.ShowStartView();
+        });
     }
     
     #endregion

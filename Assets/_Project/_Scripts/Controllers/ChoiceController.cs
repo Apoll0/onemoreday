@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ChoiceController : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class ChoiceController : MonoBehaviour
     
     #endregion
     
-    public void InitWithStats(Choice choiceStats)
+    public void InitWithStats(Choice choiceStats, bool canBeQuestion)
     {
         _currentChoiceStats = choiceStats;
         _choiceName.text = choiceStats.text;
@@ -36,31 +37,31 @@ public class ChoiceController : MonoBehaviour
         if (choiceStats.mindEffect != 0)
         {
             _statObjectMind.gameObject.SetActive(true);
-            _statObjectMind.SetBodyImage(0);
+            _statObjectMind.SetBodyImage(canBeQuestion ? ConvertStatWithProbability(choiceStats.mindEffect) : choiceStats.mindEffect);
         }
         if (choiceStats.bodyEffect != 0)
         {
             _statObjectBody.gameObject.SetActive(true);
-            _statObjectBody.SetBodyImage(0);
+            _statObjectBody.SetBodyImage(canBeQuestion ? ConvertStatWithProbability(choiceStats.bodyEffect) : choiceStats.bodyEffect);
         }
         if (choiceStats.suppliesEffect != 0)
         {
             _statObjectSupp.gameObject.SetActive(true);
-            _statObjectSupp.SetBodyImage(0);
+            _statObjectSupp.SetBodyImage(canBeQuestion ? ConvertStatWithProbability(choiceStats.suppliesEffect) : choiceStats.suppliesEffect);
         }
         if (choiceStats.hopeEffect != 0)
         {
             _statObjectHope.gameObject.SetActive(true);
-            _statObjectHope.SetBodyImage(0);
+            _statObjectHope.SetBodyImage(canBeQuestion ? ConvertStatWithProbability(choiceStats.hopeEffect) : choiceStats.hopeEffect);
         }
     }
 
     public void OpenArrows()
     {
-        _statObjectBody.SetBodyImage(_currentChoiceStats.bodyEffect);
-        _statObjectMind.SetBodyImage(_currentChoiceStats.mindEffect);
-        _statObjectSupp.SetBodyImage(_currentChoiceStats.suppliesEffect);
-        _statObjectHope.SetBodyImage(_currentChoiceStats.hopeEffect);
+        _statObjectBody.ShowStatText(_currentChoiceStats.bodyEffect);
+        _statObjectMind.ShowStatText(_currentChoiceStats.mindEffect);
+        _statObjectSupp.ShowStatText(_currentChoiceStats.suppliesEffect);
+        _statObjectHope.ShowStatText(_currentChoiceStats.hopeEffect);
     }
     
     public void OnPressedChoice()
@@ -68,4 +69,9 @@ public class ChoiceController : MonoBehaviour
         OnMadeChoice?.Invoke(this);
     }
     
+    private int ConvertStatWithProbability(int stat)
+    {
+        if (stat == 0) return 0;
+        return Random.value < GameConstants.EveryQuestionProbability ? Mathf.RoundToInt(Mathf.Sign(stat)) : 0;
+    }
 }

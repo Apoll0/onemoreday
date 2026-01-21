@@ -28,6 +28,7 @@ public class MainUIManager : MonoBehaviour
         foreach (DayBlockController dayBlockController in _dayBlockControllers)
             dayBlockController.gameObject.SetActive(true);
         _lastChanceBlockController.gameObject.SetActive(true);
+        ShowStartView();
     }
 
     #region Button callbacks
@@ -72,9 +73,14 @@ public class MainUIManager : MonoBehaviour
         _lastChanceBlockController.ShowFrom(!_lastMoveSideToLeft);
     }
 
-    public void HideLastChanceBlock(bool toLeft, Action callback = null)
+    public void HideLastChanceBlock(Action callback = null)
     {
-        _lastChanceBlockController.HideTo(toLeft, callback);
+        _lastChanceBlockController.HideTo(_lastMoveSideToLeft, callback);
+    }
+    
+    public void ShowStartView()
+    {
+        _startView.SetActive(true);
     }
     
     #endregion

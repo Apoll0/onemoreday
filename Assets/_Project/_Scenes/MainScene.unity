@@ -13948,6 +13948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LastChanceBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 2197420352609588442, guid: 0710b55908bfe430db45d755fea8181c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6066183901621460997, guid: 0710b55908bfe430db45d755fea8181c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

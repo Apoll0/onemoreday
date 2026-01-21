@@ -3,6 +3,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class DayBlockController : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class DayBlockController : MonoBehaviour
         _cardRotation.rotation = Quaternion.Euler(0f, 0f, fromLeft ? 90f : -90f);
         _cardRotation.DORotate(new Vector3(0, 0, 0), GameConstants.CardRotateDuration).OnComplete(() =>
         {
+            _caption.gameObject.SetActive(true);
             GameManager.Instance.EnableTouches();
             callback?.Invoke();
         });
@@ -49,6 +51,8 @@ public class DayBlockController : MonoBehaviour
 
     public void HideTo(bool toLeft, Action callback = null)
     {
+        _caption.gameObject.SetActive(false);
+        
         GameManager.Instance.DisableTouches();
         _cardRotation.DOKill();
         _cardRotation.DORotate(new Vector3(0, 0, toLeft ? 90f : -90f), GameConstants.CardRotateDuration).OnComplete(() =>
@@ -77,6 +81,7 @@ public class DayBlockController : MonoBehaviour
 
     private void SetStartPositions()
     {
+        _caption.gameObject.SetActive(false);
         _choice1localPos = _choices[0].transform.localPosition;
         _choice2localPos = _choices[1].transform.localPosition;
         _cardRotation.rotation = Quaternion.Euler(0f, 0f, 90f);
@@ -87,9 +92,10 @@ public class DayBlockController : MonoBehaviour
 
     private void InitChoices(EventData eventData)
     {
+        bool canBeQuestion = Random.value < GameConstants.FirstQuestionProbability;
         for (int i = 0; i < eventData.choices.Length && i < _choices.Length; i++)
         {
-            _choices[i].InitWithStats(eventData.choices[i]);
+            _choices[i].InitWithStats(eventData.choices[i], canBeQuestion);
         }
     }
 
