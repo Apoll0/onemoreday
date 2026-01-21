@@ -41,6 +41,23 @@ public class DataManager : HMSingleton<DataManager>
     }
     
     #endregion
+
+    public void SetPersistentStat(StatType stat, int value) // after upgrade
+    {
+        string key = $"PersistentStat_{stat}";
+        SecurePlayerPrefs.SetInt(key, value);
+        SecurePlayerPrefs.Save();
+    }
+
+    public int GetPersistentStat(StatType stat)
+    {
+        string key = $"PersistentStat_{stat}";
+        var val = SecurePlayerPrefs.GetInt(key);
+        if(val == 0) 
+            val = GameConstants.StatDefault;
+        
+        return val;
+    }
     
     public void SetStat(StatType stat, int value)
     {

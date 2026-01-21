@@ -51,6 +51,7 @@
     <Compile Include="Assets/HM/HMSingleton/HMSingleton.cs" />
     <Compile Include="Assets/HM/HMTimeManager/SecurePlayerPrefs.cs" />
     <Compile Include="Assets/_Project/_Scripts/Managers/MainUIManager.cs" />
+    <Compile Include="Assets/_Project/_Scripts/Controllers/LastChanceBlockController.cs" />
     <Compile Include="Assets/_Project/_Scripts/Extensions/SpriteRendererExtensions.cs" />
     <Compile Include="Assets/HM/HMSingleton/HMScriptableSingleton.cs" />
     <Compile Include="Assets/_Project/_Scripts/UI/RandomSetImage.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Assets/_Project/_Scripts/Controllers/DayBlockController.cs" />
     <Compile Include="Assets/_Project/_Scripts/SO/GameConstants.cs" />
     <Compile Include="Assets/HM/HMTimeManager/HMTimeManager.cs" />
+    <Compile Include="Assets/_Project/_Scripts/UI/TMPNoiseJitter.cs" />
     <Compile Include="Assets/_Project/_Scripts/UI/RandomFlipImage.cs" />
     <Compile Include="Assets/SecurePlayerPrefs/Plugins/SecurePlayerPrefs/Demo/SecureplayerPrefsDemoClass.cs" />
     <Compile Include="Assets/_Project/_Scripts/Controllers/ChoiceController.cs" />

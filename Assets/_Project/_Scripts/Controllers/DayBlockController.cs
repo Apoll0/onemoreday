@@ -30,11 +30,11 @@ public class DayBlockController : MonoBehaviour
         InitChoices(eventData);
     }
 
-    public void ShowFromLeft(Action callback = null)
+    public void ShowFrom(bool fromLeft, Action callback = null)
     {
         GameManager.Instance.DisableTouches();
         _cardRotation.DOKill();
-        _cardRotation.rotation = Quaternion.Euler(0f, 0f, 90f);
+        _cardRotation.rotation = Quaternion.Euler(0f, 0f, fromLeft ? 90f : -90f);
         _cardRotation.DORotate(new Vector3(0, 0, 0), GameConstants.CardRotateDuration).OnComplete(() =>
         {
             GameManager.Instance.EnableTouches();
@@ -42,9 +42,9 @@ public class DayBlockController : MonoBehaviour
         });
         
         _choices[0].transform.DOKill();
-        _choices[0].transform.DOLocalMove(_choice1localPos, GameConstants.CardRotateDuration);
+        _choices[0].transform.DOLocalMove(_choice1localPos, GameConstants.CardRotateDuration / 2f);
         _choices[1].transform.DOKill();
-        _choices[1].transform.DOLocalMove(_choice2localPos, GameConstants.CardRotateDuration);
+        _choices[1].transform.DOLocalMove(_choice2localPos, GameConstants.CardRotateDuration / 2f);
     }
 
     public void HideTo(bool toLeft, Action callback = null)
@@ -58,9 +58,17 @@ public class DayBlockController : MonoBehaviour
         });
         
         _choices[0].transform.DOKill();
-        _choices[0].transform.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration);
+        _choices[0].transform.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration / 2f);
         _choices[1].transform.DOKill();
-        _choices[1].transform.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration);
+        _choices[1].transform.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration / 2f);
+    }
+
+    public void OpenChoicesArrows()
+    {
+        foreach (var choiceController in _choices)
+        {
+            choiceController.OpenArrows();
+        }
     }
     
     #endregion

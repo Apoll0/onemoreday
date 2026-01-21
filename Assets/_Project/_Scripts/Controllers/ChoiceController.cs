@@ -19,16 +19,7 @@ public class ChoiceController : MonoBehaviour
     private Choice _currentChoiceStats;
 
     #region Init
-
-    private void OnEnable()
-    {
-        GameManager.OnNeedToOpenArrows += OpenArrows;
-    }
-
-    private void OnDisable()
-    {
-        GameManager.OnNeedToOpenArrows -= OpenArrows;
-    }
+    
     
     #endregion
     

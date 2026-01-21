@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,10 +13,9 @@ public enum GameState
 }
 
 public class GameManager : HMSingleton<GameManager>
-{
+{       
     #region Events
-
-    public static event Action OnNeedToOpenArrows;
+    
 
     #endregion
     
@@ -99,7 +99,7 @@ public class GameManager : HMSingleton<GameManager>
         DataManager.Instance.CurrentDay++;
         _currentEventData = UnityEngine.Random.value < GameConstants.RareEventChance ? EventsData.Instance.GetRandomRareEvent() : EventsData.Instance.GetRandomBasicEvent();
         UpdateCurrentEventStats();
-        _mainUIManager.ShowNewDay(_currentEventData);
+        _mainUIManager.ShowNewDayBlock(_currentEventData);
     }
 
     private void UpdateCurrentEventStats()
@@ -137,12 +137,37 @@ public class GameManager : HMSingleton<GameManager>
         
         // TODO: Поправить статы. Анимировать стрелки в цифры. Анимировать статы на экране.
         DisableTouches();
-        OnNeedToOpenArrows?.Invoke();
-        DOVirtual.DelayedCall(1f, () =>
-        {
-            _mainUIManager.HideDay(choiceController.ChoiceIndex == 0, BeginNewDay);
-        });
+        _mainUIManager.OpenArrowsOnCurrentDayBlock();
+
+        StartCoroutine(ChangeDayAfterChoiceCoroutine(choiceController.ChoiceIndex == 0)); // 0 - left, 1 - right
     }
 
+    private IEnumerator ChangeDayAfterChoiceCoroutine(bool toLeft)
+    {
+        yield return new WaitForSeconds(GameConstants.StatChangeDuration);
+        
+        _mainUIManager.HideCurrentDayBlock(toLeft);
+        
+        yield return  new WaitForSeconds(GameConstants.CardRotateDuration / 4f);
+
+        if (!IsGameOver())
+            BeginNewDay();
+    }
+    
+    private bool IsGameOver()
+    {
+        foreach (StatType statType in Enum.GetValues(typeof(StatType)))
+        {
+            if (DataManager.Instance.GetStat(statType) <= 0)
+            {
+                MyDebug.Log("[GameManager] Game Over! Stat " + statType + " reached zero.");
+                CurrentGameState = GameState.GameOver;
+                _mainUIManager.ShowLastChanceBlock(statType);
+                return true;
+            }
+        }
+        return false;
+    }
+    
     #endregion
 }

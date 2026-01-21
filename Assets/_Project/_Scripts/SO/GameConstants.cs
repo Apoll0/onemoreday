@@ -10,6 +10,8 @@ public class GameConstants : HMScriptableSingleton<GameConstants>
     
     [Header("Animations")]
     [SerializeField] private float _cardRotateDuration = 0.5f;
+    [SerializeField] private float _statChangeDuration = 0.5f;
+    [SerializeField] private float _waitLastChanceDuration = 3f;
 
     #region Properties
 
@@ -17,6 +19,8 @@ public class GameConstants : HMScriptableSingleton<GameConstants>
     public static int EnergyAddCooldown => Instance._lifeAddCooldownSeconds;
     public static int EnergyStartQuantity => Instance._energyStartQuantity;
     public static float CardRotateDuration => Instance._cardRotateDuration;
+    public static float StatChangeDuration => Instance._statChangeDuration;
+    public static float WaitLastChanceDuration => Instance._waitLastChanceDuration;
     public static float RareEventChance => Instance._rareEventChance;
 
     #endregion

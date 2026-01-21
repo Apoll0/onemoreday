@@ -9,13 +9,25 @@ public class MainUIManager : MonoBehaviour
     [SerializeField] private GameObject _viewsContainer;
     [SerializeField] private GameObject _startView;
     [SerializeField] private TextMeshProUGUI _dynamicCaption;
-    [SerializeField] private DayBlockController _dayBlockController;
+    [SerializeField] private DayBlockController[] _dayBlockControllers;
+    [SerializeField] private LastChanceBlockController _lastChanceBlockController; 
+
+    #endregion
+
+    #region Private vars
+
+    private int _currentDayBlockIndex = 0;
+    private bool _lastMoveSideToLeft = false;
 
     #endregion
 
     private void Start()
     {
         _dynamicCaption.text = "one more day"; // TODO: Localization
+        
+        foreach (DayBlockController dayBlockController in _dayBlockControllers)
+            dayBlockController.gameObject.SetActive(true);
+        _lastChanceBlockController.gameObject.SetActive(true);
     }
 
     #region Button callbacks
@@ -26,27 +38,57 @@ public class MainUIManager : MonoBehaviour
         _startView.SetActive(false);
     }
 
-    public void ShowNewDay(EventData eventData, Action callback = null)
-    {
-        _dynamicCaption.text = "day " + DataManager.Instance.CurrentDay; // TODO: Localization
-        _dayBlockController.InitWithEventData(eventData);
-        _dayBlockController.ShowFromLeft(callback);
-    }
-    
     public void SettingsButtonPressed()
     {
         // TODO: Implement settings UI
     }
 
-    public void HideDay(bool toLeft, Action callback = null)
+    #endregion
+
+    #region Public methods
+
+    public void OpenArrowsOnCurrentDayBlock()
     {
-        _dayBlockController.HideTo(toLeft, callback);
+        _dayBlockControllers[_currentDayBlockIndex].OpenChoicesArrows();
+    }
+
+    public void ShowNewDayBlock(EventData eventData, Action callback = null)
+    {
+        _dynamicCaption.text = "day " + DataManager.Instance.CurrentDay; // TODO: Localization and animation
+        ChangeDayBlockIndex();
+        _dayBlockControllers[_currentDayBlockIndex].InitWithEventData(eventData);
+        _dayBlockControllers[_currentDayBlockIndex].ShowFrom(!_lastMoveSideToLeft, callback);
+    }
+
+    public void HideCurrentDayBlock(bool toLeft, Action callback = null)
+    {
+        _lastMoveSideToLeft = toLeft;
+        _dayBlockControllers[_currentDayBlockIndex].HideTo(toLeft, callback);
+    }
+
+    public void ShowLastChanceBlock(StatType failStat)
+    {
+        _lastChanceBlockController.InitWithStatType(failStat);
+        _lastChanceBlockController.ShowFrom(!_lastMoveSideToLeft);
+    }
+
+    public void HideLastChanceBlock(bool toLeft, Action callback = null)
+    {
+        _lastChanceBlockController.HideTo(toLeft, callback);
     }
     
-    public void ShowNewDay(int dayNumber)
+    #endregion
+
+    #region Private methods
+
+    private void ChangeDayBlockIndex()
     {
-        
+        _currentDayBlockIndex++;
+        if (_currentDayBlockIndex >= _dayBlockControllers.Length)
+        {
+            _currentDayBlockIndex = 0;
+        }
     }
-    
+
     #endregion
 }
