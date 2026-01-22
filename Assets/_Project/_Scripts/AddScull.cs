@@ -5,9 +5,7 @@ public class AddScull : MonoBehaviour
 {
     [SerializeField] private GameObject[] _sculls;
     
-    private int _currentIndex = 0;
-
-    private void Start()
+    private void Awake()
     {
         foreach (GameObject scull in _sculls)
             scull.SetActive(false);
@@ -16,23 +14,23 @@ public class AddScull : MonoBehaviour
         Array.Reverse(_sculls);
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetMouseButtonDown(0))
+        DataManager.OnScullsCountChanged += UpdateSculls;
+        UpdateSculls(DataManager.Instance.ScullsCount);
+    }
+
+    private void OnDisable()
+    {
+        DataManager.OnScullsCountChanged -= UpdateSculls;
+    }
+
+    private void UpdateSculls(int count)
+    {
+        var clampedCount = Mathf.Clamp(count, 0, _sculls.Length);
+        for (int i = 0; i < _sculls.Length; i++)
         {
-            if (_currentIndex < _sculls.Length)
-            {
-                _sculls[_currentIndex].SetActive(true);
-                _currentIndex++;
-            }
-            else
-            {
-                for (int i = 0; i < _sculls.Length; i++)
-                {
-                    _sculls[i].SetActive(false);
-                }
-                _currentIndex = 0;
-            }
+            _sculls[i].SetActive(i < clampedCount);
         }
     }
 }

@@ -15,10 +15,13 @@ public class DataManager : HMSingleton<DataManager>
 
     private readonly string kCurrentDayPref = "CurrentDay";
     private readonly string kMaxDayReached = "MaxDayReached";
+    private readonly string kScullsCountPref = "ScullsCount";
+    private const int kMaxScullsCount = 182;
 
     #endregion
 
     public static event Action<StatType> OnStatChanged;
+    public static event Action<int> OnScullsCountChanged;
     
     #region Properties
     
@@ -38,6 +41,24 @@ public class DataManager : HMSingleton<DataManager>
     {
         get => SecurePlayerPrefs.HasKey(kMaxDayReached) ? SecurePlayerPrefs.GetInt(kMaxDayReached) : 0;
         private set => SecurePlayerPrefs.SetInt(kMaxDayReached, value);
+    }
+
+    public int ScullsCount
+    {
+        get => SecurePlayerPrefs.HasKey(kScullsCountPref) ? SecurePlayerPrefs.GetInt(kScullsCountPref) : 0;
+        private set
+        {
+            var currentValue = SecurePlayerPrefs.HasKey(kScullsCountPref)
+                ? SecurePlayerPrefs.GetInt(kScullsCountPref)
+                : 0;
+            var clampedValue = Mathf.Clamp(value, currentValue, kMaxScullsCount);
+            if (clampedValue == currentValue)
+                return;
+
+            SecurePlayerPrefs.SetInt(kScullsCountPref, clampedValue);
+            SecurePlayerPrefs.Save();
+            OnScullsCountChanged?.Invoke(clampedValue);
+        }
     }
     
     #endregion
@@ -75,5 +96,15 @@ public class DataManager : HMSingleton<DataManager>
     {
         string key = $"Stat_{stat}";
         return SecurePlayerPrefs.GetInt(key);
+    }
+
+    public int IncrementScullsCount()
+    {
+        var nextValue = Mathf.Min(ScullsCount + 1, kMaxScullsCount);
+        if (nextValue != ScullsCount)
+        {
+            ScullsCount = nextValue;
+        }
+        return ScullsCount;
     }
 }

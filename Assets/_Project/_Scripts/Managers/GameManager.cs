@@ -157,8 +157,7 @@ public class GameManager : HMSingleton<GameManager>
 
         if (forceGameOver)
         {
-            CurrentGameState = GameState.GameOver;
-            _mainUIManager.ShowLastChanceBlock(StatType.Body); // TODO: change to upgrade behavior
+            TriggerGameOver(StatType.Body); // TODO: change to upgrade behavior
             yield break;
         }
         
@@ -173,8 +172,7 @@ public class GameManager : HMSingleton<GameManager>
             if (DataManager.Instance.GetStat(statType) <= 0)
             {
                 MyDebug.Log("[GameManager] Game Over! Stat " + statType + " reached zero.");
-                CurrentGameState = GameState.GameOver;
-                _mainUIManager.ShowLastChanceBlock(statType);
+                TriggerGameOver(statType);
                 return true;
             }
         }
@@ -190,6 +188,16 @@ public class GameManager : HMSingleton<GameManager>
                 DataManager.Instance.SetStat(statType, 1);
             }
         }
+    }
+
+    private void TriggerGameOver(StatType statType)
+    {
+        if (CurrentGameState == GameState.GameOver)
+            return;
+
+        CurrentGameState = GameState.GameOver;
+        DataManager.Instance.IncrementScullsCount();
+        _mainUIManager.ShowLastChanceBlock(statType);
     }
 
     #endregion
