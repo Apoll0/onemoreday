@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/_Project/_Scripts/Managers/EnergyManager.cs" />
+    <Compile Include="Assets/_Project/_Scripts/SO/UpgradesData.cs" />
     <Compile Include="Assets/_Project/_Scripts/Controllers/StatBlockController.cs" />
     <Compile Include="Assets/HM/HMSingleton/HMSingleton.cs" />
     <Compile Include="Assets/HM/HMTimeManager/SecurePlayerPrefs.cs" />

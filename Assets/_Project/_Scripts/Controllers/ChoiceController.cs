@@ -95,7 +95,10 @@ public class ChoiceController : MonoBehaviour
     
     private int ConvertStatWithProbability(int stat)
     {
-        if (stat == 0) return 0;
-        return Random.value < GameConstants.EveryQuestionProbability ? Mathf.RoundToInt(Mathf.Sign(stat)) : 0;
+        if (stat == 0) 
+            return 0;
+        
+        var rnd = Random.value;
+        return rnd >= GameConstants.EveryQuestionProbability ? stat : 0;
     }
 }

@@ -12,9 +12,9 @@ public class DayBlockController : MonoBehaviour
     [SerializeField] private RectTransform   _cardRotation;
     [SerializeField] private Image           _image;
     [SerializeField] private ChoiceController[] _choices;
+    [SerializeField] private Transform       _choicesContainer;
 
-    private Vector3 _choice1localPos;
-    private Vector3 _choice2localPos;
+    private float _choicesContainerLocalPosY;
     
     private void Awake()
     {
@@ -43,10 +43,8 @@ public class DayBlockController : MonoBehaviour
             callback?.Invoke();
         });
         
-        _choices[0].transform.DOKill();
-        _choices[0].transform.DOLocalMove(_choice1localPos, GameConstants.CardRotateDuration / 2f);
-        _choices[1].transform.DOKill();
-        _choices[1].transform.DOLocalMove(_choice2localPos, GameConstants.CardRotateDuration / 2f);
+        _choicesContainer.DOKill();
+        _choicesContainer.DOLocalMoveY(_choicesContainerLocalPosY, GameConstants.CardRotateDuration / 2f);
     }
 
     public void HideTo(bool toLeft, Action callback = null)
@@ -60,11 +58,9 @@ public class DayBlockController : MonoBehaviour
             GameManager.Instance.EnableTouches();
             callback?.Invoke();
         });
-        
-        _choices[0].transform.DOKill();
-        _choices[0].transform.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration / 2f);
-        _choices[1].transform.DOKill();
-        _choices[1].transform.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration / 2f);
+
+        _choicesContainer.DOKill();
+        _choicesContainer.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration / 2f);
     }
 
     public void OpenChoicesArrows()
@@ -94,12 +90,10 @@ public class DayBlockController : MonoBehaviour
     private void SetStartPositions()
     {
         _caption.gameObject.SetActive(false);
-        _choice1localPos = _choices[0].transform.localPosition;
-        _choice2localPos = _choices[1].transform.localPosition;
+        _choicesContainerLocalPosY = _choicesContainer.localPosition.y;
         _cardRotation.rotation = Quaternion.Euler(0f, 0f, 90f);
         
-        _choices[0].transform.Translate(0,-1500f,0);
-        _choices[1].transform.Translate(0,-1500f,0);
+        _choicesContainer.Translate(0,-1500f,0);
     }
 
     private void InitChoices(EventData eventData)

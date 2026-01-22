@@ -58,6 +58,7 @@ MonoBehaviour:
   _choices:
   - {fileID: 2438332656152717718}
   - {fileID: 287586075785158811}
+  _choicesContainer: {fileID: 5525790851662780770}
 --- !u!1 &1931815363404313272
 GameObject:
   m_ObjectHideFlags: 0
