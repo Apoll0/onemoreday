@@ -468,6 +468,408 @@ MonoBehaviour:
       hopeEffect: 0
     choices2: []
     sprite: {fileID: 0}
+  - picName: ills_f_23
+    name: Footprints
+    description: Someone was here
+    choices:
+    - text: Follow them
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 0
+    - text: Avoid them
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2:
+    - text: Follow them
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 1
+      hopeEffect: 0
+    - text: Avoid them
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    sprite: {fileID: 0}
+  - picName: ills_f_24
+    name: Breakdown
+    description: Something breaks.
+    choices:
+    - text: Fix it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 1
+    - text: Abandon it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_25
+    name: Dark Thoughts
+    description: Your mind spirals
+    choices:
+    - text: Fight them
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 1
+    - text: Give up
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_26
+    name: Rare Food
+    description: A lucky find
+    choices:
+    - text: Eat
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    - text: Save it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_27
+    name: Fog
+    description: "You can\u2019t see far"
+    choices:
+    - text: Move forward
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 0
+    - text: Wait
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_28
+    name: Shelter
+    description: You could stay here
+    choices:
+    - text: Stay
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 1
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 0
+    - text: Leave
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_29
+    name: A Cry
+    description: You hear someone scream
+    choices:
+    - text: Investigate
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 0
+    - text: Ignore it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2:
+    - text: Investigate
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 0
+    - text: Ignore it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    sprite: {fileID: 0}
+  - picName: ills_f_30
+    name: Collapse
+    description: The path is blocked
+    choices:
+    - text: Push through
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    - text: Go around
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_31
+    name: Loneliness
+    description: You are truly alone
+    choices:
+    - text: Accept it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 1
+      suppliesEffect: 0
+      hopeEffect: 0
+    - text: Fight it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_32
+    name: Old Campfire
+    description: Cold ashes remain
+    choices:
+    - text: Reuse it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    - text: Move on
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_33
+    name: Pain
+    description: Every movement hurts
+    choices:
+    - text: Lie down
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    - text: Keep moving
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_34
+    name: Dampness
+    description: Everything is wet
+    choices:
+    - text: Dry your gear
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 1
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 0
+    - text: Endure
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_35
+    name: Doubt
+    description: You hesitate
+    choices:
+    - text: Decide
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    - text: Hesitate
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_36
+    name: Smell of Food
+    description: You sense it nearby
+    choices:
+    - text: Search
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 0
+    - text: Ignore
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2:
+    - text: Search
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 1
+      hopeEffect: 0
+    - text: Ignore
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    sprite: {fileID: 0}
+  - picName: ills_f_37
+    name: Cold Gets Worse
+    description: Conditions deteriorate.
+    choices:
+    - text: Prepare
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 1
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 0
+    - text: Hope for the best
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_38
+    name: Silence
+    description: Too quiet
+    choices:
+    - text: Wait
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    - text: Move
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_39
+    name: Last Strength
+    description: You must choose
+    choices:
+    - text: Make a push
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    - text: Stop
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_40
+    name: Exhausted Mind
+    description: Your thoughts blur
+    choices:
+    - text: Let go
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 1
+      suppliesEffect: 0
+      hopeEffect: -1
+    - text: Force yourself
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
   _rareEvents:
   - picName: ills_f_41
     name: Last Chance
@@ -527,5 +929,159 @@ MonoBehaviour:
       mindEffect: -1
       suppliesEffect: 0
       hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_44
+    name: Empty Day
+    description: Nothing happens.
+    choices:
+    - text: Get through it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    - text: Move on
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_45
+    name: Hope
+    description: You feel it rise
+    choices:
+    - text: Hold on
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    - text: Let go
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 1
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_46
+    name: The Line
+    description: Beyond this lies the unknown
+    choices:
+    - text: Cross it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    - text: Turn back
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_47
+    name: Last Food
+    description: A painful decision
+    choices:
+    - text: Eat it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 1
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 0
+    - text: Save it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_48
+    name: Stillness
+    description: It presses on you
+    choices:
+    - text: Listen
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 0
+    - text: Ignore
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: ills_f_49
+    name: Distant Light
+    description: You see it far away
+    choices:
+    - text: Go toward it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    - text: Stay
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2:
+    - text: Go toward it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 0
+    - text: Stay
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    sprite: {fileID: 0}
+  - picName: ills_f_50
+    name: The End Is Near
+    description: You feel it coming
+    choices:
+    - text: Accept it
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 1
+      suppliesEffect: 0
+      hopeEffect: 0
+    - text: Fight
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
     choices2: []
     sprite: {fileID: 0}
