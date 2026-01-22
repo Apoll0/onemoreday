@@ -942,13 +942,6 @@ MonoBehaviour:
       mindEffect: 0
       suppliesEffect: 0
       hopeEffect: -1
-    - text: Move on
-      isDeath: 0
-      isRandom2: 0
-      bodyEffect: -1
-      mindEffect: 0
-      suppliesEffect: 0
-      hopeEffect: -1
     choices2: []
     sprite: {fileID: 0}
   - picName: ills_f_45

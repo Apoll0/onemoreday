@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DayBlockController
   _caption: {fileID: 863655701793334294}
   _picName: {fileID: 9096181737021154468}
-  _cardRotation: {fileID: 0}
+  _cardRotation: {fileID: 8608347780521993502}
   _image: {fileID: 3731026838751230043}
   _choices:
   - {fileID: 2438332656152717718}
@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 659546410223070630}
   - component: {fileID: 3429699472870139298}
   - component: {fileID: 9096181737021154468}
+  - component: {fileID: 6739971523961321865}
   m_Layer: 5
   m_Name: PicName
   m_TagString: Untagged
@@ -302,6 +303,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6739971523961321865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2202530094692401246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Mask
+  m_ShowMaskGraphic: 0
 --- !u!1 &3310852436761224443
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5525790851662780770}
+  - component: {fileID: 6372476289315138527}
   m_Layer: 5
   m_Name: ChoicesBlock
   m_TagString: Untagged
@@ -339,6 +354,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6372476289315138527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310852436761224443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 27
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &3923753804784321515
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c46f8733662342689cb382850807425, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -883,6 +924,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6134386862243099003, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
+      propertyPath: _choiceIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7482949958803603059, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -918,19 +963,83 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 232029806896443046, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4737807340802385081}
   m_SourcePrefab: {fileID: 100100000, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
 --- !u!114 &287586075785158811 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6134386862243099003, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
   m_PrefabInstance: {fileID: 6258893364789727712}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6189172650490347334}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24242b15b8c954db288b2d01b25f83d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChoiceController
+--- !u!1 &6189172650490347334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 232029806896443046, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
+  m_PrefabInstance: {fileID: 6258893364789727712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4737807340802385081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6189172650490347334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 287586075785158811}
+        m_TargetAssemblyTypeName: ChoiceController, Assembly-CSharp
+        m_MethodName: OnPressedChoice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &8534330369400639415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}

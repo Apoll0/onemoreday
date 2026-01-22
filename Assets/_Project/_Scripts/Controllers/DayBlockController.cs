@@ -105,6 +105,10 @@ public class DayBlockController : MonoBehaviour
     private void InitChoices(EventData eventData)
     {
         bool canBeQuestion = Random.value < GameConstants.FirstQuestionProbability;
+        
+        // отключить второй вариант выбора для событий с одним выбором
+        _choices[1].gameObject.SetActive(eventData.choices.Length != 1);
+
         for (int i = 0; i < eventData.choices.Length && i < _choices.Length; i++)
         {
             _choices[i].InitWithStats(eventData.choices[i], canBeQuestion);
