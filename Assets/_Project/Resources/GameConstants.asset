@@ -15,4 +15,9 @@ MonoBehaviour:
   _statDefaultValue: 10
   _lifeAddCooldownSeconds: 300
   _energyStartQuantity: 5
+  _rareEventChance: 0.2
+  _firstQuestionProbability: 0.5
+  _everyQuestionProbability: 0.2
   _cardRotateDuration: 0.3
+  _statChangeDuration: 1
+  _waitLastChanceDuration: 5

@@ -74,6 +74,18 @@ public class DayBlockController : MonoBehaviour
             choiceController.OpenArrows();
         }
     }
+
+    public void OpenArrowOnRandomStat(StatType choice, int value)
+    {
+        foreach (var choiceController in _choices)
+        {
+            if (choiceController.isRandomChoice)
+            {
+                choiceController.OpenRandomStatArrow(choice, value);
+                break;
+            }
+        }
+    }
     
     #endregion
 

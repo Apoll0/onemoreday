@@ -3,6 +3,7 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 [Serializable]
 public class EventData
@@ -11,6 +12,7 @@ public class EventData
     public string name;
     public string description;
     [FormerlySerializedAs("decisions")] public Choice[] choices;
+    public Choice[] choices2; // only if needed alternative set of choices
     [HideInInspector] public Sprite sprite;
 
     public async void LoadImageAsync(Image image)
@@ -73,6 +75,7 @@ public class Choice
 public class EventsData : HMScriptableSingleton<EventsData>
 {
     [SerializeField] private EventData[] _basicEvents;
+    [SerializeField] private EventData[] _midEvents;
     [SerializeField] private EventData[] _rareEvents;
 
     #region Public Methods
@@ -82,6 +85,11 @@ public class EventsData : HMScriptableSingleton<EventsData>
         return GetRandomEvent(_basicEvents);
     }
 
+    public EventData GetRandomMidEvent()
+    {
+        return GetRandomEvent(_midEvents);
+    }
+    
     public EventData GetRandomRareEvent()
     {
         return GetRandomEvent(_rareEvents);
@@ -109,9 +117,16 @@ public class EventsData : HMScriptableSingleton<EventsData>
             choices = new Choice[eventData.choices.Length]
         };
         
-        for (int i = 0; i < eventData.choices.Length; i++)
+        // Decide which set of choices to use
+        var choiceArray = eventData.choices;
+        if(eventData.choices2.Length >= 2 && Random.value > 0.5f)
         {
-            var choice = eventData.choices[i];
+            choiceArray = eventData.choices2;
+        }
+        
+        for (int i = 0; i < choiceArray.Length; i++)
+        {
+            var choice = choiceArray[i];
             eventCopy.choices[i] = new Choice
             {
                 text = choice.text,

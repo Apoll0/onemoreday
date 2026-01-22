@@ -5,6 +5,7 @@
     <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
     <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
     <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+    <ResolveNuGetPackages>false</ResolveNuGetPackages>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -478,20 +479,20 @@
     <Reference Include="nunit.framework">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.ext.nunit@d8c07649098d/net40/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Hashing">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.collections@aea9d3bd5e19/Unity.Collections.Tests/System.IO.Hashing/System.IO.Hashing.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.collections@aea9d3bd5e19/Unity.Collections.Tests/System.Runtime.CompilerServices.Unsafe/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/6000.3.4f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -901,9 +902,6 @@
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
@@ -913,11 +911,14 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.IK.Editor">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="PsdPlugin">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.IK.Editor">
-      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.IK.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -949,11 +950,11 @@
     <Reference Include="Unity.Burst">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InternalAPIEngineBridge.004">
-      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.004.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.004">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.004.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
@@ -970,11 +971,11 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -986,17 +987,13 @@
       <Project>{7db0fe54-aed1-6f87-de70-77bd3725da49}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="NaughtyAttributes.Test.csproj">
-      <Project>{59ab548e-9f48-4adf-fab8-b912e9b62e60}</Project>
-      <Name>NaughtyAttributes.Test</Name>
+    <ProjectReference Include="Lofelt.NiceVibrations.csproj">
+      <Project>{b93a91db-9d51-182c-35d3-baf35698b53e}</Project>
+      <Name>Lofelt.NiceVibrations</Name>
     </ProjectReference>
     <ProjectReference Include="CodeStage.Maintainer.Demo.csproj">
       <Project>{7b39c713-79bf-aa96-0f0b-f4c58535dedd}</Project>
       <Name>CodeStage.Maintainer.Demo</Name>
-    </ProjectReference>
-    <ProjectReference Include="Lofelt.NiceVibrations.csproj">
-      <Project>{b93a91db-9d51-182c-35d3-baf35698b53e}</Project>
-      <Name>Lofelt.NiceVibrations</Name>
     </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Core.csproj">
       <Project>{d0ccb22e-e0bb-1e79-4243-2d4000955aa6}</Project>
@@ -1017,6 +1014,10 @@
     <ProjectReference Include="CodeStage.Maintainer.Editor.csproj">
       <Project>{a8fb4b11-5359-199e-155a-1ad8111e9f5c}</Project>
       <Name>CodeStage.Maintainer.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NaughtyAttributes.Test.csproj">
+      <Project>{59ab548e-9f48-4adf-fab8-b912e9b62e60}</Project>
+      <Name>NaughtyAttributes.Test</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

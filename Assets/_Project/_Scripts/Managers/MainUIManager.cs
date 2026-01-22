@@ -53,6 +53,11 @@ public class MainUIManager : MonoBehaviour
         _dayBlockControllers[_currentDayBlockIndex].OpenChoicesArrows();
     }
 
+    public void OpenArrowOnRandomStat(StatType choice, int value)
+    {
+        _dayBlockControllers[_currentDayBlockIndex].OpenArrowOnRandomStat(choice, value);
+    }
+    
     public void ShowNewDayBlock(EventData eventData, Action callback = null)
     {
         _dynamicCaption.text = "day " + DataManager.Instance.CurrentDay; // TODO: Localization and animation

@@ -5,6 +5,7 @@
     <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
     <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
     <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+    <ResolveNuGetPackages>false</ResolveNuGetPackages>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,8 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Interfaces/IComponentBeginIssueDetector.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Records/BuildSettingsIssueRecord.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/TreeViews/References/ExactReferencesListItem.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Records/BuildSettingsIssueRecord.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/ChangeTracking/AssetsChangeTracker.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/TreeBased/References/Entry/SceneSettingsProcessor.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/TreeBased/References/Conjunction/AssetConjunctions.cs" />
@@ -69,13 +70,13 @@
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/IssuesFinderDetectors.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Enums/AssetSettingsKind.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Scan/Listeners/Interfaces/IPropertyScanListener.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Records/Abstraction/AssetIssueRecord.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Progress/MapUpdateProgressReporter.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Records/Abstraction/AssetIssueRecord.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/TreeBased/References/Entry/EntryAddSettings.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Scan/Listeners/ScanListenerResults.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Tools/CSSettingsTools.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Implementation/DuplicateLayersDetector.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Progress/IProgressReporter.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Implementation/DuplicateLayersDetector.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/ReferencedAtAssetInfo.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Tools/CSComponentTools.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Settings/IssuesFinderSettings.cs" />
@@ -102,8 +103,8 @@
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Enums/IssuesSortingType.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Scan/Scanners/UnityEventScanner.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Processing/ReferenceProcessor.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Tabs/ReferencesFinder/ChildTabs/Scene/HierarchyReferencesTab.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Cleaner/Records/CleanerRecord.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Tabs/ReferencesFinder/ChildTabs/Scene/HierarchyReferencesTab.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Tabs/AboutTab.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Dependencies/Parsers/AddressableAssetGroupParser.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Common/Tools/CSEditorIcons.cs" />
@@ -139,9 +140,9 @@
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/MaintainerWindow.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Common/Tools/CSTextureLoader.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Utils/UIHelpers.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Filters/Tabs/Abstract/StringFiltersTab.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/TreeDataModel/TreeItemUtility.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Implementation/ShaderErrorDetector.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Filters/Tabs/Abstract/StringFiltersTab.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/TreeViews/ListTreeView.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Scan/Listeners/Interfaces/IGameObjectEndScanListener.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Implementation/InconsistentTerrainDataDetector.cs" />
@@ -149,21 +150,21 @@
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Interfaces/IComponentEndIssueDetector.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Cleaner/BuildReportAnalyzer.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Implementation/InvalidSortingLayerDetector.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/TreeBased/References/Conjunction/TreeConjunction.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Filters/CleanerFiltersWindow.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/TreeBased/References/Conjunction/TreeConjunction.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Tools/CSTraverseTools.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Scan/Listeners/Interfaces/IComponentEndScanListener.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Scan/Listeners/Interfaces/IGameObjectBeginScanListener.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Scan/Listeners/Interfaces/IComponentEndScanListener.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Filters/FiltersWindow.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Filters/FilterType.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Tools/CSObjectTools.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/TreeViews/References/HierarchyReferencesTreeViewItem.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Settings/ProjectSettings.Migration.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Session/AssetsPathGuidIndex.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Settings/ProjectSettings.Migration.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Implementation/MissingReferenceDetector.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/SearchResultsStorage.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Implementation/MissingComponentDetector.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/ReferencedAtOpenedSceneInfo.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Implementation/MissingComponentDetector.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Tabs/IssuesFinder/IssuesTab.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/TreeBased/References/HierarchyScopeReferencesFinder.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Tabs/ReferencesFinder/ChildTabs/ReferencesChildTab.cs" />
@@ -185,8 +186,8 @@
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Tools/CSFilterTools.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Cleaner/ProjectCleaner.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/TreeViews/MaintainerTreeView.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/TreeBased/References/ProjectScopeReferencesFinder.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Tabs/Abstractions/BaseTab.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/TreeBased/References/ProjectScopeReferencesFinder.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Common/RecordsSortings.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Enums/IssueKind.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Scanners/UnityEventIssuesScanner.cs" />
@@ -204,18 +205,18 @@
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/TreeBased/References/ReferencesFinder.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Routines/TargetProcessor.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Scan/Scanners/Interfaces/IPropertyScanner.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Processing/AssetsMapProcessor.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Records/Abstraction/IssueRecord.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Tabs/ReferencesFinder/ChildTabs/Project/ProjectExactReferencesListPanel.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Processing/AssetsMapProcessor.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Interfaces/IAssetBeginIssueDetector.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Tools/CSHighlightTools.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Tabs/ReferencesFinder/ChildTabs/Project/ProjectExactReferencesListPanel.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Records/SceneSettingsIssueRecord.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Tools/CSHighlightTools.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Tabs/ProjectCleaner/CleanerTab.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Records/ShaderIssueRecord.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Settings/ReferencesFinderSettings.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Implementation/InvalidRendererBatchingDetector.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/MaintainerMenu.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Interfaces/ISceneEndIssueDetector.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/MaintainerMenu.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Tabs/Abstractions/TwoColumnsTab.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Issues/Detectors/Interfaces/IGameObjectBeginIssueDetector.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Cleaner/Records/CleanerWarningRecord.cs" />
@@ -236,10 +237,10 @@
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Enums/AssetOrigin.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Tools/CSMenuTools.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/Filters/Tabs/SceneFiltersTab.cs" />
-    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Session/AssetsMapSessionCache.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/UI/TreeViews/MaintainerMultiColumnHeader.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Modules/RecordsBased/Common/Enums/SortingDirection.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Extension/IMaintainerExtension.cs" />
+    <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/Session/AssetsMapSessionCache.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Map/ReferencingEntryData.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Core/Extension/ExtensibleModule.cs" />
     <Compile Include="Assets/Plugins/CodeStage/Maintainer/Editor/Scripts/Maintainer.cs" />
@@ -680,20 +681,20 @@
     <Reference Include="nunit.framework">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.ext.nunit@d8c07649098d/net40/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Hashing">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.collections@aea9d3bd5e19/Unity.Collections.Tests/System.IO.Hashing/System.IO.Hashing.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.collections@aea9d3bd5e19/Unity.Collections.Tests/System.Runtime.CompilerServices.Unsafe/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/6000.3.4f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

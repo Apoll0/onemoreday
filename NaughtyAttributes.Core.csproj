@@ -5,6 +5,7 @@
     <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
     <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
     <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+    <ResolveNuGetPackages>false</ResolveNuGetPackages>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -66,15 +67,15 @@
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/ResizableTextAreaAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/MinValueAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/EnableIfAttribute.cs" />
-    <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/InfoBoxAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/AnimatorParamAttribute.cs" />
+    <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/InfoBoxAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/LabelAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/SpecialCaseDrawerAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/ReadOnlyAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/DrawerAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/RequiredAttribute.cs" />
-    <Compile Include="Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/ValidateInputAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/CurveRangeAttribute.cs" />
+    <Compile Include="Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/ValidateInputAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/ValidatorAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/ValidatorAttributes/MaxValueAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/IGroupAttribute.cs" />
@@ -88,8 +89,8 @@
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/MinMaxSliderAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/OnValueChangedAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/MetaAttributes/HideIfAttribute.cs" />
-    <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/TagAttribute.cs" />
     <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes_SpecialCase/ButtonAttribute.cs" />
+    <Compile Include="Assets/NaughtyAttributes/Scripts/Core/DrawerAttributes/TagAttribute.cs" />
     <None Include="Assets/NaughtyAttributes/Scripts/Core/NaughtyAttributes.Core.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/6000.3.4f1/Unity.app/Contents/Resources/Scripting/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -502,20 +503,20 @@
     <Reference Include="nunit.framework">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.ext.nunit@d8c07649098d/net40/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    </Reference>
     <Reference Include="System.IO.Hashing">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.collections@aea9d3bd5e19/Unity.Collections.Tests/System.IO.Hashing/System.IO.Hashing.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Library/PackageCache/com.unity.collections@aea9d3bd5e19/Unity.Collections.Tests/System.Runtime.CompilerServices.Unsafe/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>/Users/st/Documents/_WORK/OneMoreDay/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/6000.3.4f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

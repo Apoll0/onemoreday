@@ -102,7 +102,24 @@ public class GameManager : HMSingleton<GameManager>
     private void BeginNewDay()
     {
         DataManager.Instance.CurrentDay++;
-        _currentEventData = UnityEngine.Random.value < GameConstants.RareEventChance ? EventsData.Instance.GetRandomRareEvent() : EventsData.Instance.GetRandomBasicEvent();
+        
+        var chance = UnityEngine.Random.value;
+        if (chance < GameConstants.RareEventChance)
+        {
+            MyDebug.Log("[GameManager] Rare event triggered!");
+            _currentEventData = EventsData.Instance.GetRandomRareEvent();
+        }
+        else if (chance < GameConstants.MidEventChance + GameConstants.RareEventChance)
+        {
+            MyDebug.Log("[GameManager] Mid event triggered!");
+            _currentEventData = EventsData.Instance.GetRandomMidEvent();
+        }
+        else
+        {
+            MyDebug.Log("[GameManager] Basic event triggered!");
+            _currentEventData = EventsData.Instance.GetRandomBasicEvent();
+        }
+        
         UpdateCurrentEventStats();
         _mainUIManager.ShowNewDayBlock(_currentEventData);
     }
@@ -194,14 +211,13 @@ public class GameManager : HMSingleton<GameManager>
         {
             // add random effect +2 or -2
             var plusOrMinus = UnityEngine.Random.value < 0.5f ? 2 : -2;
-            var statTypes = new StatType[] { StatType.Body, StatType.Mind, StatType.Supplies, StatType.Hope };
+            var statTypes = new [] { StatType.Body, StatType.Mind, StatType.Supplies, StatType.Hope };
             var randomStat = statTypes[UnityEngine.Random.Range(0, statTypes.Length)];
             DataManager.Instance.SetStat(randomStat, DataManager.Instance.GetStat(randomStat) + plusOrMinus);
             
             // TODO: Поправить статы. Анимировать стрелки в цифры. Анимировать статы на экране.
             DisableTouches();
-            // _mainUIManager.OpenArrowOnRandomStat(randomStat, plusOrMinus);
-            // TODO: Continue here!
+            _mainUIManager.OpenArrowOnRandomStat(randomStat, plusOrMinus);
 
             StartCoroutine(ChangeDayAfterChoiceCoroutine(choiceController.ChoiceIndex == 0)); // 0 - left, 1 - right
         }

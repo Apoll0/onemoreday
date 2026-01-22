@@ -16,6 +16,7 @@ public class ChoiceController : MonoBehaviour
     [SerializeField] private StatBodyController _statObjectHope;
 
     public int ChoiceIndex => _choiceIndex;
+    public bool isRandomChoice => _currentChoiceStats.isRandom2;
     
     private Choice _currentChoiceStats;
 
@@ -62,6 +63,29 @@ public class ChoiceController : MonoBehaviour
         _statObjectMind.ShowStatText(_currentChoiceStats.mindEffect);
         _statObjectSupp.ShowStatText(_currentChoiceStats.suppliesEffect);
         _statObjectHope.ShowStatText(_currentChoiceStats.hopeEffect);
+    }
+    
+    public void OpenRandomStatArrow(StatType statType, int value)
+    {
+        switch (statType)
+        {
+            case StatType.Body:
+                _statObjectBody.gameObject.SetActive(true);
+                _statObjectBody.ShowStatText(value);
+                break;
+            case StatType.Mind:
+                _statObjectMind.gameObject.SetActive(true);
+                _statObjectMind.ShowStatText(value);
+                break;
+            case StatType.Supplies:
+                _statObjectSupp.gameObject.SetActive(true);
+                _statObjectSupp.ShowStatText(value);
+                break;
+            case StatType.Hope:
+                _statObjectHope.gameObject.SetActive(true);
+                _statObjectHope.ShowStatText(value);
+                break;
+        }
     }
     
     public void OnPressedChoice()
