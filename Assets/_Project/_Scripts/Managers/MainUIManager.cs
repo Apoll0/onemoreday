@@ -9,8 +9,13 @@ public class MainUIManager : MonoBehaviour
     [SerializeField] private GameObject _viewsContainer;
     [SerializeField] private GameObject _startView;
     [SerializeField] private TextMeshProUGUI _dynamicCaption;
+    [SerializeField] private TextMeshProUGUI _bestNumberText;
     [SerializeField] private DayBlockController[] _dayBlockControllers;
-    [SerializeField] private LastChanceBlockController _lastChanceBlockController; 
+    [SerializeField] private LastChanceBlockController _lastChanceBlockController;
+    [Space]
+    [SerializeField] private GameObject[] _energyBars;
+    [SerializeField] private GameObject[] _energyBarsDisabled;
+    [SerializeField] private TextMeshProUGUI _energyTimerText;
 
     #endregion
 
@@ -20,6 +25,8 @@ public class MainUIManager : MonoBehaviour
     private bool _lastMoveSideToLeft = false;
 
     #endregion
+
+    #region Init
 
     private void Start()
     {
@@ -31,10 +38,27 @@ public class MainUIManager : MonoBehaviour
         ShowStartView();
     }
 
+    private void OnEnable()
+    {
+        EnergyManager.OnEnergyCountChanged += UpdateEnergyValue;
+        EnergyManager.OnTimerToNextEnergyUpdated += UpdateEnergyTimerText;
+    }
+
+    private void OnDisable()
+    {
+        EnergyManager.OnEnergyCountChanged -= UpdateEnergyValue;
+        EnergyManager.OnTimerToNextEnergyUpdated -= UpdateEnergyTimerText;
+    }
+    
+    #endregion
+
     #region Button callbacks
 
     public void StartButtonPressed()
     {
+        if(EnergyManager.Instance.EnergyCount == 0)
+            return;
+        
         GameManager.Instance.StartGame();
         _startView.SetActive(false);
     }
@@ -85,6 +109,9 @@ public class MainUIManager : MonoBehaviour
     
     public void ShowStartView()
     {
+        _bestNumberText.text = DataManager.Instance.MaxDayReached + " days"; // TODO: Localization
+        UpdateEnergyValue();
+        UpdateEnergyTimerText();
         _startView.SetActive(true);
     }
     
@@ -101,5 +128,30 @@ public class MainUIManager : MonoBehaviour
         }
     }
 
+    private void UpdateEnergyValue()
+    {
+        var energy = EnergyManager.Instance.EnergyCount;
+        for (int i = 0; i < _energyBars.Length; i++)
+        {
+            bool isActive = i < energy;
+            _energyBars[i].SetActive(isActive);
+            _energyBarsDisabled[i].SetActive(!isActive);
+        }
+    }
+
+    private void UpdateEnergyTimerText()
+    {
+        var timeToNextEnergy = EnergyManager.Instance.TimeToNextEnergy;
+        if (timeToNextEnergy > 0)
+        {
+            TimeSpan timeSpan = TimeSpan.FromSeconds(timeToNextEnergy);
+            _energyTimerText.text = $"{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
+        }
+        else
+        {
+            _energyTimerText.text = "full"; // TODO: Localization
+        }
+    }
+    
     #endregion
 }

@@ -73,6 +73,7 @@ public class GameManager : HMSingleton<GameManager>
 
         CurrentGameState = GameState.InGame;
         DataManager.Instance.CurrentDay = 0;
+        EnergyManager.Instance.IncrementEnergy(-1); // consume one energy to start the game
 
         // Initialize player stats
         DataManager.Instance.SetStat(StatType.Body, GameConstants.StatDefault);

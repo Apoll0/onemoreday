@@ -18,7 +18,7 @@ public class ChoiceController : MonoBehaviour
     public int ChoiceIndex => _choiceIndex;
     public bool isRandomChoice => _currentChoiceStats.isRandom2;
     
-    private Choice _currentChoiceStats;
+    private Choice _currentChoiceStats = new ();
 
     #region Init
     
