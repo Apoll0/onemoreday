@@ -109,20 +109,20 @@ public class EventsData : HMScriptableSingleton<EventsData>
 
         int randomIndex = UnityEngine.Random.Range(0, eventsArray.Length);
         var eventData =  eventsArray[randomIndex];
+        // Decide which set of choices to use
+        var choiceArray = eventData.choices;
+        if (eventData.choices2 != null && eventData.choices2.Length >= 2 && Random.value > 0.5f)
+        {
+            choiceArray = eventData.choices2;
+        }
+        
         var eventCopy = new EventData
         {
             picName = eventData.picName,
             name = eventData.name,
             description = eventData.description,
-            choices = new Choice[eventData.choices.Length]
+            choices = new Choice[choiceArray.Length]
         };
-        
-        // Decide which set of choices to use
-        var choiceArray = eventData.choices;
-        if(eventData.choices2.Length >= 2 && Random.value > 0.5f)
-        {
-            choiceArray = eventData.choices2;
-        }
         
         for (int i = 0; i < choiceArray.Length; i++)
         {
@@ -130,6 +130,8 @@ public class EventsData : HMScriptableSingleton<EventsData>
             eventCopy.choices[i] = new Choice
             {
                 text = choice.text,
+                isDeath = choice.isDeath,
+                isRandom2 = choice.isRandom2,
                 bodyEffect = choice.bodyEffect,
                 mindEffect = choice.mindEffect,
                 suppliesEffect = choice.suppliesEffect,
