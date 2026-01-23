@@ -76,10 +76,10 @@ public class GameManager : HMSingleton<GameManager>
         EnergyManager.Instance.IncrementEnergy(-1); // consume one energy to start the game
 
         // Initialize player stats
-        DataManager.Instance.SetStat(StatType.Body, GameConstants.StatDefault);
-        DataManager.Instance.SetStat(StatType.Mind, GameConstants.StatDefault);
-        DataManager.Instance.SetStat(StatType.Supplies, GameConstants.StatDefault);
-        DataManager.Instance.SetStat(StatType.Hope, GameConstants.StatDefault);
+        DataManager.Instance.SetStat(StatType.Body, DataManager.Instance.GetPersistentStat(StatType.Body));
+        DataManager.Instance.SetStat(StatType.Mind, DataManager.Instance.GetPersistentStat(StatType.Mind));
+        DataManager.Instance.SetStat(StatType.Supplies, DataManager.Instance.GetPersistentStat(StatType.Supplies));
+        DataManager.Instance.SetStat(StatType.Hope, DataManager.Instance.GetPersistentStat(StatType.Hope));
 
         MyDebug.Log("[GameManager] Game started. Current Day: " + DataManager.Instance.CurrentDay);
         

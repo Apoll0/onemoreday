@@ -27,7 +27,7 @@ public class DayBlockController : MonoBehaviour
     {
         _caption.text = eventData.description;
         _picName.text = eventData.name;
-        eventData.LoadImageAsync(_image);
+        eventData.LoadImageAsync("Ills/", _image);
         InitChoices(eventData);
     }
 

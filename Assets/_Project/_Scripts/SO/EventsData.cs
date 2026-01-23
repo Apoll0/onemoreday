@@ -15,7 +15,7 @@ public class EventData
     public Choice[] choices2; // only if needed alternative set of choices
     [HideInInspector] public Sprite sprite;
 
-    public async void LoadImageAsync(Image image)
+    public async void LoadImageAsync(string path, Image image)
     {
         if (string.IsNullOrEmpty(picName))
         {
@@ -23,7 +23,7 @@ public class EventData
             return;
         }
     
-        var request = Resources.LoadAsync<Sprite>("Ills/" + picName);
+        var request = Resources.LoadAsync<Sprite>(path + picName);
         
         while (!request.isDone)
         {
