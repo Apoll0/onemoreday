@@ -39,6 +39,58 @@ MonoBehaviour:
       hopeEffect: 0
     choices2: []
     sprite: {fileID: 0}
+  - picName: upgrade_01
+    name: Endure the Cold
+    description: You learned to suffer quietly
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_01
+    name: Iron Will
+    description: You forced your body forward
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 2
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_01
+    name: Survival Instinct
+    description: You chose strength over comfort
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 2
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_01
+    name: Broken Limits
+    description: You pushed too far
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 3
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: -2
+    choices2: []
+    sprite: {fileID: 0}
   _mindUpgrades:
   - picName: upgrade_02
     name: Clear Lessons
@@ -53,9 +105,438 @@ MonoBehaviour:
       hopeEffect: 0
     choices2: []
     sprite: {fileID: 0}
-  _suppliesUpgrades: []
-  _hopeUpgrades: []
-  _mixedUpgrades: []
-  _safetyUpgrades: []
-  _highRiskUpgrades: []
-  _chaosUpgrades: []
+  - picName: upgrade_02
+    name: Hard Truths
+    description: Knowledge came at a cost
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 1
+      suppliesEffect: -1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_02
+    name: Let Go
+    description: Hope distracted you
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 1
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_02
+    name: Cold Logic
+    description: You stopped trusting your body
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 2
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_02
+    name: Calculated Risk
+    description: You planned instead of hoping
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 2
+      suppliesEffect: -1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_02
+    name: Mental Fracture
+    description: Your mind grew sharper — and darker
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 3
+      suppliesEffect: 0
+      hopeEffect: -2
+    choices2: []
+    sprite: {fileID: 0}
+  _suppliesUpgrades:
+  - picName: upgrade_03
+    name: Hoarder
+    description: You kept what you found
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_03
+    name: Careful Planning
+    description: Thinking replaced feeling
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_03
+    name: Practical Choices
+    description: Hope didn’t feed you
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 1
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_03
+    name: Stockpiled
+    description: You carried more than you should
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 2
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_03
+    name: Ruthless Efficiency
+    description: Waste was no longer an option
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 2
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_03
+    name: Heavy Burden
+    description: Your body paid for abundance
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -2
+      mindEffect: 0
+      suppliesEffect: 3
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  _hopeUpgrades:
+  - picName: upgrade_04
+    name: Hold On
+    description: You refused to give up
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_04
+    name: Blind Faith
+    description: Thinking slowed you down
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_04
+    name: Empty Hands
+    description: You believed more than you prepared
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_04
+    name: Burning Inside
+    description: Hope kept you moving
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 2
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_04
+    name: Inner Fire
+    description: Doubt weakened your focus
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 2
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_04
+    name: Consumed
+    description: Hope burned everything else away
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -2
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 3
+    choices2: []
+    sprite: {fileID: 0}
+  _mixedUpgrades:
+  - picName: upgrade_05
+    name: Through Pain
+    description: You endured, but learned
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 1
+      mindEffect: -1
+      suppliesEffect: 0
+      hopeEffect: 1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_05
+    name: Survival Lessons
+    description: Knowledge made you cautious
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 1
+      suppliesEffect: 1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_05
+    name: Scavenger’s Luck
+    description: Hope followed preparation
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 1
+      hopeEffect: 1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_05
+    name: Balanced Suffering
+    description: You adapted — unevenly
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 1
+      mindEffect: 1
+      suppliesEffect: -1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  _safetyUpgrades:
+  - picName: upgrade_06
+    name: Keep Breathing
+    description: You survived. That was enough
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 1
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_06
+    name: Stay Sane
+    description: You held yourself together
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 1
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_06
+    name: Find Something
+    description: You managed to keep one thing
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_06
+    name: Don’t Give Up
+    description: You refused to fade
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 1
+    choices2: []
+    sprite: {fileID: 0}
+  _highRiskUpgrades:
+  - picName: upgrade_07
+    name: Flesh Over Thought
+    description: Your body endured what your mind could not
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 4
+      mindEffect: -3
+      suppliesEffect: 0
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_07
+    name: Sharp but Hollow
+    description: You understood — too well
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 4
+      suppliesEffect: -3
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_07
+    name: Everything Carried
+    description: You survived at a physical cost
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: 0
+      suppliesEffect: 4
+      hopeEffect: -3
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_07
+    name: Burning Obsession
+    description: Hope became everything
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -3
+      mindEffect: 0
+      suppliesEffect: 0
+      hopeEffect: 4
+    choices2: []
+    sprite: {fileID: 0}
+  _chaosUpgrades:
+  - picName: upgrade_08
+    name: Desperate Balance
+    description: Nothing came without loss
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 2
+      mindEffect: -1
+      suppliesEffect: -1
+      hopeEffect: 0
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_08
+    name: Narrow Escape
+    description: You focused too hard
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 2
+      suppliesEffect: 0
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_08
+    name: Last Supplies
+    description: You kept going — barely
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: 0
+      mindEffect: -1
+      suppliesEffect: 2
+      hopeEffect: -1
+    choices2: []
+    sprite: {fileID: 0}
+  - picName: upgrade_08
+    name: Final Resolve
+    description: You burned what remained
+    choices:
+    - text: 
+      isDeath: 0
+      isRandom2: 0
+      bodyEffect: -1
+      mindEffect: 0
+      suppliesEffect: -1
+      hopeEffect: 2
+    choices2: []
+    sprite: {fileID: 0}
