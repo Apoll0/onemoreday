@@ -12,6 +12,7 @@ public class MainUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bestNumberText;
     [SerializeField] private DayBlockController[] _dayBlockControllers;
     [SerializeField] private LastChanceBlockController _lastChanceBlockController;
+    [SerializeField] private UpgradesBlockController _upgradesBlockController;
     [Space]
     [SerializeField] private GameObject[] _energyBars;
     [SerializeField] private GameObject[] _energyBarsDisabled;
@@ -35,6 +36,7 @@ public class MainUIManager : MonoBehaviour
         foreach (DayBlockController dayBlockController in _dayBlockControllers)
             dayBlockController.gameObject.SetActive(true);
         _lastChanceBlockController.gameObject.SetActive(true);
+        _upgradesBlockController.gameObject.SetActive(true);
         ShowStartView();
     }
 
@@ -100,6 +102,11 @@ public class MainUIManager : MonoBehaviour
     {
         _lastChanceBlockController.InitWithStatType(failStat);
         _lastChanceBlockController.ShowFrom(!_lastMoveSideToLeft);
+    }
+    
+    public void ShowUpgradesBlock(Action callback = null)
+    {
+        _upgradesBlockController.Show(callback);
     }
 
     public void HideLastChanceBlock(Action callback = null)

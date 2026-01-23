@@ -66,9 +66,11 @@
     <Compile Include="Assets/_Project/_Scripts/UI/RandomFlipImage.cs" />
     <Compile Include="Assets/SecurePlayerPrefs/Plugins/SecurePlayerPrefs/Demo/SecureplayerPrefsDemoClass.cs" />
     <Compile Include="Assets/_Project/_Scripts/Controllers/ChoiceController.cs" />
+    <Compile Include="Assets/_Project/_Scripts/Controllers/StatGroupController.cs" />
     <Compile Include="Assets/_Project/_Scripts/Extensions/ArrayExtension.cs" />
     <Compile Include="Assets/_Project/_Scripts/Extensions/ListExtension.cs" />
     <Compile Include="Assets/SecurePlayerPrefs/Plugins/SecurePlayerPrefs/SecurePlayerPrefs.cs" />
+    <Compile Include="Assets/_Project/_Scripts/Controllers/UpgradesBlockController.cs" />
     <Compile Include="Assets/_Project/_Scripts/Controllers/StatBodyController.cs" />
     <Compile Include="Assets/_Project/_Scripts/Utils/MyDebug.cs" />
     <Compile Include="Assets/SecurePlayerPrefs/Plugins/SecurePlayerPrefs/Demo/SecurePlayerPrefsDemo.cs" />

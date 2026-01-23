@@ -59,14 +59,45 @@ public class UpgradesData : HMScriptableSingleton<UpgradesData>
 
     private EventData GetRandomUpgrade(EventData[] upgrades)
     {
-        if (upgrades.Length == 0)
+        if (upgrades == null || upgrades.Length == 0)
         {
-            Debug.LogWarning("No upgrades available!");
+            MyDebug.LogRed("[UpgradesData] No upgrades available.");
             return null;
         }
+
+        int randomIndex = UnityEngine.Random.Range(0, upgrades.Length);
+        var upgradeData =  upgrades[randomIndex];
+        // Decide which set of choices to use
+        var choiceArray = upgradeData.choices;
+        if (upgradeData.choices2 != null && upgradeData.choices2.Length > 0 && Random.value > 0.5f)
+        {
+            choiceArray = upgradeData.choices2;
+        }
         
-        int randomIndex = Random.Range(0, upgrades.Length);
-        return upgrades[randomIndex];
+        var upgradeCopy = new EventData
+        {
+            picName = upgradeData.picName,
+            name = upgradeData.name,
+            description = upgradeData.description,
+            choices = new Choice[choiceArray.Length]
+        };
+        
+        for (int i = 0; i < choiceArray.Length; i++)
+        {
+            var choice = choiceArray[i];
+            upgradeCopy.choices[i] = new Choice
+            {
+                text = choice.text,
+                isDeath = choice.isDeath,
+                isRandom2 = choice.isRandom2,
+                bodyEffect = choice.bodyEffect,
+                mindEffect = choice.mindEffect,
+                suppliesEffect = choice.suppliesEffect,
+                hopeEffect = choice.hopeEffect
+            };
+        }
+        
+        return upgradeCopy;
     }
     
     [Button(enabledMode:EButtonEnableMode.Editor)]

@@ -47,6 +47,7 @@ public class GameManager : HMSingleton<GameManager>
         ChoiceController.OnMadeChoice += OnMadeChoice;
         LastChanceBlockController.OnOneMoreDayTriggered += OnOneMoreDayTriggered;
         LastChanceBlockController.OnNoThanksTriggered += NoThanksTriggered;
+        UpgradesBlockController.OnUpgradeApplyed += OnUpgradeApplyed;
     }
     
     private void OnDisable()
@@ -54,6 +55,7 @@ public class GameManager : HMSingleton<GameManager>
         ChoiceController.OnMadeChoice -= OnMadeChoice;
         LastChanceBlockController.OnOneMoreDayTriggered -= OnOneMoreDayTriggered;
         LastChanceBlockController.OnNoThanksTriggered -= NoThanksTriggered;
+        UpgradesBlockController.OnUpgradeApplyed -= OnUpgradeApplyed;
     }
 
     #endregion
@@ -180,14 +182,11 @@ public class GameManager : HMSingleton<GameManager>
         return false;
     }
 
-    private void CorrectStatsFromZero()
+    private void CorrectStatsFromPersistant()
     {
         foreach (StatType statType in Enum.GetValues(typeof(StatType)))
         {
-            if (DataManager.Instance.GetStat(statType) <= 0)
-            {
-                DataManager.Instance.SetStat(statType, 1);
-            }
+            DataManager.Instance.SetStat(statType, DataManager.Instance.GetPersistentStat(statType));
         }
     }
 
@@ -245,13 +244,21 @@ public class GameManager : HMSingleton<GameManager>
         }
     }
 
+    private void OnUpgradeApplyed()
+    {
+        MyDebug.Log("[GameManager] Upgrade applied. Resuming game.");
+        CurrentGameState = GameState.InGame;
+        CorrectStatsFromPersistant();
+        BeginNewDay();
+    }
+    
     private void OnOneMoreDayTriggered()
     {
         MyDebug.Log("[GameManager] One more day triggered.");
         _mainUIManager.HideLastChanceBlock(() =>
         {
             CurrentGameState = GameState.InGame;
-            CorrectStatsFromZero();
+            CorrectStatsFromPersistant();
             BeginNewDay();
         });
     }
@@ -261,8 +268,7 @@ public class GameManager : HMSingleton<GameManager>
         MyDebug.Log("[GameManager] No thanks triggered. Returning to main menu.");
         _mainUIManager.HideLastChanceBlock(() =>
         {
-            CurrentGameState = GameState.MainMenu;
-            _mainUIManager.ShowStartView();
+            _mainUIManager.ShowUpgradesBlock();
         });
     }
     
