@@ -80,6 +80,8 @@ public class UpgradesBlockController : MonoBehaviour
 
     #endregion
 
+    #region Button callbacks
+
     public void RefreshPressed()
     {
         // TODO: Show Ads
@@ -90,6 +92,8 @@ public class UpgradesBlockController : MonoBehaviour
     {
         StartCoroutine(ApplyUpgrades(index));
     }
+
+    #endregion
 
     #region Private methods
 
@@ -106,15 +110,27 @@ public class UpgradesBlockController : MonoBehaviour
         Hide(() =>
         {
             GameManager.Instance.EnableTouches();
-            // TODO: Run new game
+            OnUpgradeApplyed?.Invoke();
         });
     }
     
     private void InitWithUpgrades()
     {
         // В данном случае апгрейды всегда парные: левый и правый
-        _upgrades[0] = UpgradesData.Instance.GetRandomBodyUpgrade();
-        _upgrades[1] = UpgradesData.Instance.GetRandomMindUpgrade();
+        // Первый апгрейд случайный, но не уводящий в минус
+        _upgrades[0] = UpgradesData.Instance.GetRandomUpgradeWithProbability(15f,15f,15f,15f, 15f, 5f, 15f, 5f);
+        
+        if(DataManager.Instance.GetPersistentStat(StatType.Body) <= 1)
+            _upgrades[1] = UpgradesData.Instance.GetSafetyUpgradeByStat(StatType.Body);
+        else if(DataManager.Instance.GetPersistentStat(StatType.Supplies) <= 1)
+            _upgrades[1] = UpgradesData.Instance.GetSafetyUpgradeByStat(StatType.Supplies);
+        else if(DataManager.Instance.GetPersistentStat(StatType.Hope) <= 1)
+            _upgrades[1] = UpgradesData.Instance.GetSafetyUpgradeByStat(StatType.Hope);
+        else if(DataManager.Instance.GetPersistentStat(StatType.Mind) <= 1)
+            _upgrades[1] = UpgradesData.Instance.GetSafetyUpgradeByStat(StatType.Mind);
+        else
+            // Если все в порядке, то второй апгрейд тоже случайный
+            _upgrades[1] = UpgradesData.Instance.GetRandomUpgradeWithProbability(15f,15f,15f,15f, 15f, 5f, 15f, 5f);
         
         for (int i = 0; i < _upgrades.Length; i++)
         {

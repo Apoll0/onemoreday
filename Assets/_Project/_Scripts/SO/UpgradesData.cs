@@ -1,3 +1,4 @@
+using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -20,6 +21,57 @@ public class UpgradesData : HMScriptableSingleton<UpgradesData>
 
     #region Public Methods
 
+    public EventData GetRandomUpgradeWithProbability(float bodyProb, float mindProb, float suppliesProb, float hopeProb,
+        float mixedProb, float safetyProb, float highRiskProb, float chaosProb)
+    {
+        float totalProb = bodyProb + mindProb + suppliesProb + hopeProb + mixedProb + safetyProb + highRiskProb + chaosProb;
+        float randomValue = Random.Range(0f, totalProb);
+        
+        if (randomValue < bodyProb)
+            return GetRandomBodyUpgrade();
+        randomValue -= bodyProb;
+        
+        if (randomValue < mindProb)
+            return GetRandomMindUpgrade();
+        randomValue -= mindProb;
+        
+        if (randomValue < suppliesProb)
+            return GetRandomSuppliesUpgrade();
+        randomValue -= suppliesProb;
+        
+        if (randomValue < hopeProb)
+            return GetRandomHopeUpgrade();
+        randomValue -= hopeProb;
+        
+        if (randomValue < mixedProb)
+            return GetRandomMixedUpgrade();
+        randomValue -= mixedProb;
+        
+        if (randomValue < safetyProb)
+            return GetRandomSafetyUpgrade();
+        randomValue -= safetyProb;
+        
+        if (randomValue < highRiskProb)
+            return GetRandomHighRiskUpgrade();
+        randomValue -= highRiskProb;
+        
+        return GetRandomChaosUpgrade();
+    }
+    
+    public EventData GetSafetyUpgradeByStat(StatType stat)
+    {
+        foreach (var upgrade in _safetyUpgrades)
+        {
+            var choice = upgrade.choices[0];
+            if(stat == StatType.Body && choice.bodyEffect > 0 || 
+               stat == StatType.Mind && choice.mindEffect > 0 || 
+               stat == StatType.Supplies && choice.suppliesEffect > 0 ||
+               stat == StatType.Hope && choice.hopeEffect > 0)
+                return upgrade;
+        }
+        return null;
+    }
+    
     public EventData GetRandomBodyUpgrade()
     {
         return GetRandomUpgrade(_bodyUpgrades);
@@ -65,8 +117,20 @@ public class UpgradesData : HMScriptableSingleton<UpgradesData>
             return null;
         }
 
-        int randomIndex = UnityEngine.Random.Range(0, upgrades.Length);
-        var upgradeData =  upgrades[randomIndex];
+        var upgradesCopy = upgrades.ToList();
+        // exclude upgrades that can make zero stat
+        upgradesCopy.RemoveAll(upgrade =>
+        {
+            var choice = upgrade.choices[0];
+            return DataManager.Instance.GetPersistentStat(StatType.Body) + choice.bodyEffect <= 0 ||
+                   DataManager.Instance.GetPersistentStat(StatType.Mind) + choice.mindEffect <= 0 ||
+                   DataManager.Instance.GetPersistentStat(StatType.Supplies) + choice.suppliesEffect <= 0 ||
+                   DataManager.Instance.GetPersistentStat(StatType.Hope) + choice.hopeEffect <= 0;
+        });
+        
+        
+        int randomIndex = UnityEngine.Random.Range(0, upgradesCopy.Count);
+        var upgradeData =  upgradesCopy[randomIndex];
         // Decide which set of choices to use
         var choiceArray = upgradeData.choices;
         if (upgradeData.choices2 != null && upgradeData.choices2.Length > 0 && Random.value > 0.5f)

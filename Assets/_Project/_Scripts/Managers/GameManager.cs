@@ -40,6 +40,13 @@ public class GameManager : HMSingleton<GameManager>
     {
         Initialize();
         
+        if(!SecurePlayerPrefs.HasKey("FirstStart"))
+        {
+            SecurePlayerPrefs.SetBool("FirstStart", true);
+            SecurePlayerPrefs.Save();
+            EnergyManager.Instance.StartInfiniteEnergyFor(900); // 15 minutes
+            
+        }
     }
 
     private void OnEnable()
@@ -77,11 +84,7 @@ public class GameManager : HMSingleton<GameManager>
         DataManager.Instance.CurrentDay = 0;
         EnergyManager.Instance.IncrementEnergy(-1); // consume one energy to start the game
 
-        // Initialize player stats
-        DataManager.Instance.SetStat(StatType.Body, DataManager.Instance.GetPersistentStat(StatType.Body));
-        DataManager.Instance.SetStat(StatType.Mind, DataManager.Instance.GetPersistentStat(StatType.Mind));
-        DataManager.Instance.SetStat(StatType.Supplies, DataManager.Instance.GetPersistentStat(StatType.Supplies));
-        DataManager.Instance.SetStat(StatType.Hope, DataManager.Instance.GetPersistentStat(StatType.Hope));
+        SetStatsToPersistant();
 
         MyDebug.Log("[GameManager] Game started. Current Day: " + DataManager.Instance.CurrentDay);
         
@@ -127,6 +130,15 @@ public class GameManager : HMSingleton<GameManager>
         _mainUIManager.ShowNewDayBlock(_currentEventData);
     }
 
+    private void SetStatsToPersistant()
+    {
+        // Initialize player stats
+        DataManager.Instance.SetStat(StatType.Body, DataManager.Instance.GetPersistentStat(StatType.Body));
+        DataManager.Instance.SetStat(StatType.Mind, DataManager.Instance.GetPersistentStat(StatType.Mind));
+        DataManager.Instance.SetStat(StatType.Supplies, DataManager.Instance.GetPersistentStat(StatType.Supplies));
+        DataManager.Instance.SetStat(StatType.Hope, DataManager.Instance.GetPersistentStat(StatType.Hope));
+    }
+    
     private void UpdateCurrentEventStats()
     {
         int GetFactor()
@@ -246,10 +258,11 @@ public class GameManager : HMSingleton<GameManager>
 
     private void OnUpgradeApplyed()
     {
-        MyDebug.Log("[GameManager] Upgrade applied. Resuming game.");
-        CurrentGameState = GameState.InGame;
+        MyDebug.Log("[GameManager] Upgrade applied.");
+        CurrentGameState = GameState.MainMenu;
         CorrectStatsFromPersistant();
-        BeginNewDay();
+        //BeginNewDay();
+        _mainUIManager.ShowStartView();
     }
     
     private void OnOneMoreDayTriggered()
@@ -268,6 +281,7 @@ public class GameManager : HMSingleton<GameManager>
         MyDebug.Log("[GameManager] No thanks triggered. Returning to main menu.");
         _mainUIManager.HideLastChanceBlock(() =>
         {
+            SetStatsToPersistant();
             _mainUIManager.ShowUpgradesBlock();
         });
     }

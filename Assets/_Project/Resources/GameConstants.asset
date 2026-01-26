@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameConstants
   m_EditorClassIdentifier: Assembly-CSharp::GameConstants
   _statDefaultValue: 10
-  _lifeAddCooldownSeconds: 600
+  _lifeAddCooldownSeconds: 900
   _energyStartQuantity: 5
   _rareEventChance: 0.2
   _midEventChance: 0.4

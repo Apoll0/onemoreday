@@ -17,6 +17,8 @@ public class MainUIManager : MonoBehaviour
     [SerializeField] private GameObject[] _energyBars;
     [SerializeField] private GameObject[] _energyBarsDisabled;
     [SerializeField] private TextMeshProUGUI _energyTimerText;
+    [SerializeField] private GameObject _energyContainer;
+    [SerializeField] private GameObject _energyInfinite;
 
     #endregion
 
@@ -44,12 +46,14 @@ public class MainUIManager : MonoBehaviour
     {
         EnergyManager.OnEnergyCountChanged += UpdateEnergyValue;
         EnergyManager.OnTimerToNextEnergyUpdated += UpdateEnergyTimerText;
+        EnergyManager.OnEnergyCountChanged += UpdateEnergyTimerText;
     }
 
     private void OnDisable()
     {
         EnergyManager.OnEnergyCountChanged -= UpdateEnergyValue;
         EnergyManager.OnTimerToNextEnergyUpdated -= UpdateEnergyTimerText;
+        EnergyManager.OnEnergyCountChanged -= UpdateEnergyTimerText;
     }
     
     #endregion
@@ -106,6 +110,7 @@ public class MainUIManager : MonoBehaviour
     
     public void ShowUpgradesBlock(Action callback = null)
     {
+        _dynamicCaption.text = "one more day"; // TODO: Localization
         _upgradesBlockController.Show(callback);
     }
 
@@ -148,8 +153,23 @@ public class MainUIManager : MonoBehaviour
 
     private void UpdateEnergyTimerText()
     {
+        if(EnergyManager.Instance.IsInfiniteEnergy())
+        {
+            _energyContainer.SetActive(false);
+            _energyInfinite.SetActive(true);
+            var timeToFinishInfinite = EnergyManager.Instance.InifiniteEnergyTimeLeft();
+            TimeSpan timeSpan = TimeSpan.FromSeconds(timeToFinishInfinite);
+            _energyTimerText.text = $"{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
+            return;
+        }
+        else
+        {
+            _energyContainer.SetActive(true);
+            _energyInfinite.SetActive(false);
+        }
+        
         var timeToNextEnergy = EnergyManager.Instance.TimeToNextEnergy;
-        if (timeToNextEnergy > 0)
+        if (timeToNextEnergy > 0 && !EnergyManager.Instance.IsFullEnergy())
         {
             TimeSpan timeSpan = TimeSpan.FromSeconds(timeToNextEnergy);
             _energyTimerText.text = $"{timeSpan.Minutes:D2}:{timeSpan.Seconds:D2}";
