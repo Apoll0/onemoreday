@@ -77,6 +77,8 @@ public class GameManager : HMSingleton<GameManager>
     {
         HMTimeManager.Instance.Initialize();
         EnergyManager.Instance.Initialize();
+        
+        SetStatsToPersistant();
     }
     
     public void StartGame()

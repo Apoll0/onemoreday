@@ -38,31 +38,38 @@ public class ChoiceController : MonoBehaviour
         if (choiceStats.mindEffect != 0)
         {
             _statObjectMind.gameObject.SetActive(true);
-            _statObjectMind.SetBodyImage(canBeQuestion ? ConvertStatWithProbability(choiceStats.mindEffect) : choiceStats.mindEffect);
+            _statObjectMind.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.mindEffect) : choiceStats.mindEffect);
         }
         if (choiceStats.bodyEffect != 0)
         {
             _statObjectBody.gameObject.SetActive(true);
-            _statObjectBody.SetBodyImage(canBeQuestion ? ConvertStatWithProbability(choiceStats.bodyEffect) : choiceStats.bodyEffect);
+            _statObjectBody.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.bodyEffect) : choiceStats.bodyEffect);
         }
         if (choiceStats.suppliesEffect != 0)
         {
             _statObjectSupp.gameObject.SetActive(true);
-            _statObjectSupp.SetBodyImage(canBeQuestion ? ConvertStatWithProbability(choiceStats.suppliesEffect) : choiceStats.suppliesEffect);
+            _statObjectSupp.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.suppliesEffect) : choiceStats.suppliesEffect);
         }
         if (choiceStats.hopeEffect != 0)
         {
             _statObjectHope.gameObject.SetActive(true);
-            _statObjectHope.SetBodyImage(canBeQuestion ? ConvertStatWithProbability(choiceStats.hopeEffect) : choiceStats.hopeEffect);
+            _statObjectHope.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.hopeEffect) : choiceStats.hopeEffect);
         }
     }
 
     public void OpenArrows()
     {
-        _statObjectBody.ShowStatText(_currentChoiceStats.bodyEffect);
-        _statObjectMind.ShowStatText(_currentChoiceStats.mindEffect);
-        _statObjectSupp.ShowStatText(_currentChoiceStats.suppliesEffect);
-        _statObjectHope.ShowStatText(_currentChoiceStats.hopeEffect);
+        if(_statObjectBody.gameObject.activeSelf)
+            _statObjectBody.OpenStatNumber(_currentChoiceStats.bodyEffect);
+        
+        if (_statObjectMind.gameObject.activeSelf)
+            _statObjectMind.OpenStatNumber(_currentChoiceStats.mindEffect);
+        
+        if(_statObjectSupp.gameObject.activeSelf)
+            _statObjectSupp.OpenStatNumber(_currentChoiceStats.suppliesEffect);
+        
+        if (_statObjectHope.gameObject.activeSelf)
+            _statObjectHope.OpenStatNumber(_currentChoiceStats.hopeEffect);
     }
     
     public void OpenRandomStatArrow(StatType statType, int value)
@@ -71,19 +78,19 @@ public class ChoiceController : MonoBehaviour
         {
             case StatType.Body:
                 _statObjectBody.gameObject.SetActive(true);
-                _statObjectBody.ShowStatText(value);
+                _statObjectBody.OpenStatNumber(value);
                 break;
             case StatType.Mind:
                 _statObjectMind.gameObject.SetActive(true);
-                _statObjectMind.ShowStatText(value);
+                _statObjectMind.OpenStatNumber(value);
                 break;
             case StatType.Supplies:
                 _statObjectSupp.gameObject.SetActive(true);
-                _statObjectSupp.ShowStatText(value);
+                _statObjectSupp.OpenStatNumber(value);
                 break;
             case StatType.Hope:
                 _statObjectHope.gameObject.SetActive(true);
-                _statObjectHope.ShowStatText(value);
+                _statObjectHope.OpenStatNumber(value);
                 break;
         }
     }

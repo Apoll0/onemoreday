@@ -13,19 +13,19 @@ public class StatGroupController : MonoBehaviour
         switch (statType)
         {
             case StatType.Body:
-                _bodyController.ShowStatText(statValue);
+                _bodyController.OpenStatNumber(statValue);
                 _bodyController.gameObject.SetActive(statValue != 0);
                 break;
             case StatType.Mind:
-                _mindController.ShowStatText(statValue);
+                _mindController.OpenStatNumber(statValue);
                 _mindController.gameObject.SetActive(statValue != 0);
                 break;
             case StatType.Supplies:
-                _suppliesController.ShowStatText(statValue);
+                _suppliesController.OpenStatNumber(statValue);
                 _suppliesController.gameObject.SetActive(statValue != 0);
                 break;
             case StatType.Hope:
-                _hopeController.ShowStatText(statValue);
+                _hopeController.OpenStatNumber(statValue);
                 _hopeController.gameObject.SetActive(statValue != 0);
                 break;
             default:

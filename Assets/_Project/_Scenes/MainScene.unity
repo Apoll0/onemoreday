@@ -3078,9 +3078,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 328085957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 18, y: -50}
   m_SizeDelta: {x: 36, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668356025
@@ -3423,9 +3423,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 19426410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150, y: -50}
   m_SizeDelta: {x: 36, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &711216963
@@ -4143,9 +4143,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 19426410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 106, y: -50}
   m_SizeDelta: {x: 36, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1059112779
@@ -4663,9 +4663,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 328085957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 62, y: -50}
   m_SizeDelta: {x: 36, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1287878240
@@ -4828,9 +4828,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 19426410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 18, y: -50}
   m_SizeDelta: {x: 36, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1335046129
@@ -5213,7 +5213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1576756768
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6689,9 +6689,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 328085957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 106, y: -50}
   m_SizeDelta: {x: 36, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020509550
@@ -7074,9 +7074,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 19426410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 194, y: -50}
   m_SizeDelta: {x: 36, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086592951
@@ -7291,9 +7291,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 19426410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 62, y: -50}
   m_SizeDelta: {x: 36, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2099885987
@@ -12687,9 +12687,9 @@ RectTransform:
   - {fileID: 1503511691151833957}
   m_Father: {fileID: 637015267}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 441, y: -114.5}
   m_SizeDelta: {x: 350, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2911308985399096243
@@ -16524,6 +16524,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 373468689}
     m_Modifications:
+    - target: {fileID: 1600558673809399116, guid: 0710b55908bfe430db45d755fea8181c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2197420352609588442, guid: 0710b55908bfe430db45d755fea8181c, type: 3}
       propertyPath: m_Name
       value: LastChanceBlock

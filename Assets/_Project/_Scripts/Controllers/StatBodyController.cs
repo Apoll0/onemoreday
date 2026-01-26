@@ -4,11 +4,38 @@ using UnityEngine.UI;
 
 public class StatBodyController : MonoBehaviour
 {
-    [SerializeField] private Image targetImage;
-    [SerializeField] private Sprite[] sprites;
-    [SerializeField] private TextMeshProUGUI _statText;
+    private const string kQuestionMarkSpriteName = "<sprite=0>";
+    private const string kArrowUpSpriteName = "<sprite=3>";
+    private const string kArrowDownSpriteName = "<sprite=2>";
+    
+    //[SerializeField] private Sprite[] sprites;
+    [SerializeField] private RollingTextAnimator _statText;
 
-    public void SetBodyImage(int stat) // 0 - question mark
+    public void SetStatArrow(int stat)
+    {
+        if (stat == 0)
+        {
+            _statText.ChangeTextQuick(kQuestionMarkSpriteName);
+        }
+        else if (stat > 0)
+        {
+            _statText.ChangeTextQuick(kArrowUpSpriteName);
+        }
+        else
+        {
+            _statText.ChangeTextQuick(kArrowDownSpriteName);
+        }
+    }
+    
+    public void OpenStatNumber(int stat)
+    {
+        if (stat > 0)
+            _statText.ChangeText($"+{stat}", true);
+        else
+            _statText.ChangeText(stat.ToString(), false);
+    }
+    
+    /*public void SetBodyImage(int stat) // 0 - question mark
     {
         _statText.gameObject.SetActive(false);
         targetImage.gameObject.SetActive(true);
@@ -30,5 +57,5 @@ public class StatBodyController : MonoBehaviour
             _statText.text = $"+{stat}";
         else
             _statText.text = stat.ToString();
-    }
+    }*/
 }

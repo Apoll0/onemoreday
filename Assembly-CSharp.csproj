@@ -55,6 +55,7 @@
     <Compile Include="Assets/_Project/_Scripts/Managers/MainUIManager.cs" />
     <Compile Include="Assets/_Project/_Scripts/Controllers/LastChanceBlockController.cs" />
     <Compile Include="Assets/_Project/_Scripts/Extensions/SpriteRendererExtensions.cs" />
+    <Compile Include="Assets/_Project/_Scripts/UI/RollingTextAnimator.cs" />
     <Compile Include="Assets/HM/HMSingleton/HMScriptableSingleton.cs" />
     <Compile Include="Assets/_Project/_Scripts/UI/RandomSetImage.cs" />
     <Compile Include="Assets/_Project/_Scripts/Other/BranchWindSkin.cs" />

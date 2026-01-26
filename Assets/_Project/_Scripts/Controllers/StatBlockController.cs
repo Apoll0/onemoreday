@@ -5,7 +5,7 @@ using UnityEngine;
 public class StatBlockController : MonoBehaviour
 {
     [SerializeField] private StatType _statType;
-    [SerializeField] private TextMeshProUGUI _statText;
+    [SerializeField] private RollingTextAnimator _statText;
 
     private int _currentStatValue;
 
@@ -30,7 +30,7 @@ public class StatBlockController : MonoBehaviour
         if (statType == _statType)
         {
             _currentStatValue = DataManager.Instance.GetStat(_statType);
-            _statText.text = _currentStatValue.ToString(); // TODO: Add animation
+            _statText.ChangeNumber(_currentStatValue);
         }
     }
 
