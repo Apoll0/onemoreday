@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using DG.Tweening;
+using Lofelt.NiceVibrations;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = System.Random;
@@ -21,6 +22,7 @@ public class GameManager : HMSingleton<GameManager>
     
     [SerializeField] private EventSystem _eventSystem;
     [SerializeField] private MainUIManager _mainUIManager;
+    [SerializeField] private RavenController _ravenController;
 
     #region Private vars
 
@@ -47,6 +49,8 @@ public class GameManager : HMSingleton<GameManager>
             EnergyManager.Instance.StartInfiniteEnergyFor(900); // 15 minutes
             
         }
+        
+        _ravenController.FlyIn();
     }
 
     private void OnEnable()
@@ -80,6 +84,8 @@ public class GameManager : HMSingleton<GameManager>
         if (CurrentGameState == GameState.InGame)
             return;
 
+        _ravenController.FlyOut();
+        
         CurrentGameState = GameState.InGame;
         DataManager.Instance.CurrentDay = 0;
         EnergyManager.Instance.IncrementEnergy(-1); // consume one energy to start the game
@@ -219,6 +225,8 @@ public class GameManager : HMSingleton<GameManager>
     private void OnMadeChoice(ChoiceController choiceController)
     {
         MyDebug.Log("[GameManager] Made choice " + choiceController.ChoiceIndex);
+        HapticPatterns.PlayPreset(HapticPatterns.PresetType.LightImpact);
+        
         var choice = _currentEventData.choices[choiceController.ChoiceIndex];
 
         if (choice.isDeath)
@@ -259,10 +267,12 @@ public class GameManager : HMSingleton<GameManager>
     private void OnUpgradeApplyed()
     {
         MyDebug.Log("[GameManager] Upgrade applied.");
+        HapticPatterns.PlayPreset(HapticPatterns.PresetType.MediumImpact);
         CurrentGameState = GameState.MainMenu;
         CorrectStatsFromPersistant();
         //BeginNewDay();
         _mainUIManager.ShowStartView();
+        _ravenController.FlyIn();
     }
     
     private void OnOneMoreDayTriggered()

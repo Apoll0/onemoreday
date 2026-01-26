@@ -1,4 +1,5 @@
 using System;
+using Lofelt.NiceVibrations;
 using TMPro;
 using UnityEngine;
 
@@ -19,6 +20,7 @@ public class MainUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _energyTimerText;
     [SerializeField] private GameObject _energyContainer;
     [SerializeField] private GameObject _energyInfinite;
+    [SerializeField] private GameObject _videoSignStartButton;
 
     #endregion
 
@@ -104,6 +106,7 @@ public class MainUIManager : MonoBehaviour
 
     public void ShowLastChanceBlock(StatType failStat)
     {
+        HapticPatterns.PlayPreset(HapticPatterns.PresetType.HeavyImpact);
         _lastChanceBlockController.InitWithStatType(failStat);
         _lastChanceBlockController.ShowFrom(!_lastMoveSideToLeft);
     }
@@ -149,6 +152,8 @@ public class MainUIManager : MonoBehaviour
             _energyBars[i].SetActive(isActive);
             _energyBarsDisabled[i].SetActive(!isActive);
         }
+        
+        _videoSignStartButton.SetActive(energy == 0);
     }
 
     private void UpdateEnergyTimerText()
