@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class MainUIManager : MonoBehaviour
 {
+    private const string kFirstGameCompleted = "FirstGameCompleted";
+
     #region Exposed variables
 
     [SerializeField] private GameObject _viewsContainer;
     [SerializeField] private GameObject _startView;
-    [SerializeField] private TextMeshProUGUI _dynamicCaption;
+    [SerializeField] private RollingTextAnimator _dynamicCaption;
     [SerializeField] private TextMeshProUGUI _bestNumberText;
     [SerializeField] private DayBlockController[] _dayBlockControllers;
     [SerializeField] private LastChanceBlockController _lastChanceBlockController;
@@ -21,6 +23,7 @@ public class MainUIManager : MonoBehaviour
     [SerializeField] private GameObject _energyContainer;
     [SerializeField] private GameObject _energyInfinite;
     [SerializeField] private GameObject _videoSignStartButton;
+    [SerializeField] private GameObject _bestBlock;
 
     #endregion
 
@@ -35,7 +38,7 @@ public class MainUIManager : MonoBehaviour
 
     private void Start()
     {
-        _dynamicCaption.text = "one more day"; // TODO: Localization
+        _dynamicCaption.ChangeTextQuick("one more day");
         
         foreach (DayBlockController dayBlockController in _dayBlockControllers)
             dayBlockController.gameObject.SetActive(true);
@@ -92,7 +95,7 @@ public class MainUIManager : MonoBehaviour
     
     public void ShowNewDayBlock(EventData eventData, Action callback = null)
     {
-        _dynamicCaption.text = "day " + DataManager.Instance.CurrentDay; // TODO: Localization and animation
+        _dynamicCaption.ChangeText("day " + DataManager.Instance.CurrentDay, false);
         ChangeDayBlockIndex();
         _dayBlockControllers[_currentDayBlockIndex].InitWithEventData(eventData);
         _dayBlockControllers[_currentDayBlockIndex].ShowFrom(!_lastMoveSideToLeft, callback);
@@ -113,7 +116,7 @@ public class MainUIManager : MonoBehaviour
     
     public void ShowUpgradesBlock(Action callback = null)
     {
-        _dynamicCaption.text = "one more day"; // TODO: Localization
+        _dynamicCaption.ChangeText("one more day", false);
         _upgradesBlockController.Show(callback);
     }
 
@@ -124,10 +127,16 @@ public class MainUIManager : MonoBehaviour
     
     public void ShowStartView()
     {
-        _bestNumberText.text = DataManager.Instance.MaxDayReached + " days"; // TODO: Localization
+        _bestNumberText.text = DataManager.Instance.MaxDayReached + " days";
         UpdateEnergyValue();
         UpdateEnergyTimerText();
         _startView.SetActive(true);
+        _bestBlock.SetActive(SecurePlayerPrefs.HasKey(kFirstGameCompleted));
+    }
+
+    public void CompleteFirstGame()
+    {
+        SecurePlayerPrefs.SetBool(kFirstGameCompleted, true);
     }
     
     #endregion

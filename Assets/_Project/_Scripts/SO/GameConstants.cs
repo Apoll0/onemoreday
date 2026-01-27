@@ -13,7 +13,9 @@ public class GameConstants : HMScriptableSingleton<GameConstants>
     
     [Header("Animations")]
     [SerializeField] private float _cardRotateDuration = 0.5f;
-    [SerializeField] private float _statChangeDuration = 0.5f;
+    [SerializeField] private float _choicesAppearDuration = 0.5f;
+    [SerializeField] private float _cardChangePause = 0.5f;
+    [SerializeField] private float _pauseAfterChoice = 0.5f;
     [SerializeField] private float _waitLastChanceDuration = 3f;
 
     #region Properties
@@ -26,7 +28,9 @@ public class GameConstants : HMScriptableSingleton<GameConstants>
     public static float FirstQuestionProbability => Instance._firstQuestionProbability;
     public static float EveryQuestionProbability => Instance._everyQuestionProbability;
     public static float CardRotateDuration => Instance._cardRotateDuration;
-    public static float StatChangeDuration => Instance._statChangeDuration;
+    public static float ChoicesAppearDuration => Instance._choicesAppearDuration;
+    public static float CardChangePause => Instance._cardChangePause;
+    public static float PauseAfterChoice => Instance._pauseAfterChoice;
     public static float WaitLastChanceDuration => Instance._waitLastChanceDuration;
     
 

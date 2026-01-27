@@ -690,6 +690,7 @@ GameObject:
   - component: {fileID: 5240990629299621038}
   - component: {fileID: 3373192927568498155}
   - component: {fileID: 7733741696312299425}
+  - component: {fileID: 4935162343849439429}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -754,6 +755,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4935162343849439429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957926010642091716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07114fba687f54deda683dc60fedcce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomFlipImage
+  _xFlip: 1
+  _yFlip: 0
 --- !u!1 &5810863625203966340
 GameObject:
   m_ObjectHideFlags: 0

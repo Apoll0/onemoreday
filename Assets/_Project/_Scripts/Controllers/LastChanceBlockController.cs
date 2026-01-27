@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class LastChanceBlockController : MonoBehaviour
 {
+    private const float kCardsAngle = 60f;
+    
     public static event Action OnOneMoreDayTriggered;
     public static event Action OnNoThanksTriggered;
     
@@ -64,7 +66,7 @@ public class LastChanceBlockController : MonoBehaviour
     {
         GameManager.Instance.DisableTouches();
         _cardRotation.DOKill();
-        _cardRotation.rotation = Quaternion.Euler(0f, 0f, fromLeft ? 90f : -90f);
+        _cardRotation.rotation = Quaternion.Euler(0f, 0f, fromLeft ? kCardsAngle : -kCardsAngle);
         _cardRotation.DORotate(new Vector3(0, 0, 0), GameConstants.CardRotateDuration).OnComplete(() =>
         {
             GameManager.Instance.EnableTouches();
@@ -72,20 +74,20 @@ public class LastChanceBlockController : MonoBehaviour
             StartVideoButtonAnimation();
         });
         
-        _buttonsBlock.transform.DOLocalMove(_buttonsBlockLocalPos, GameConstants.CardRotateDuration / 2f);
+        _buttonsBlock.transform.DOLocalMove(_buttonsBlockLocalPos, GameConstants.ChoicesAppearDuration);
     }
 
     public void HideTo(bool toLeft, Action callback = null)
     {
         GameManager.Instance.DisableTouches();
         _cardRotation.DOKill();
-        _cardRotation.DORotate(new Vector3(0, 0, toLeft ? 90f : -90f), GameConstants.CardRotateDuration).OnComplete(() =>
+        _cardRotation.DORotate(new Vector3(0, 0, toLeft ? kCardsAngle : -kCardsAngle), GameConstants.CardRotateDuration).OnComplete(() =>
         {
             GameManager.Instance.EnableTouches();
             callback?.Invoke();
         });
         
-        _buttonsBlock.transform.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration / 2f).OnComplete(() =>
+        _buttonsBlock.transform.DOLocalMoveY(-1500f, GameConstants.ChoicesAppearDuration).OnComplete(() =>
         {
             _caption.gameObject.SetActive(false);
         });
@@ -98,7 +100,7 @@ public class LastChanceBlockController : MonoBehaviour
     private void SetStartPositions()
     {
         _buttonsBlockLocalPos = _buttonsBlock.localPosition;
-        _cardRotation.rotation = Quaternion.Euler(0f, 0f, 90f);
+        _cardRotation.rotation = Quaternion.Euler(0f, 0f, kCardsAngle);
         
         _buttonsBlock.transform.Translate(new Vector3(0, -1500f, 0f));
         _caption.gameObject.SetActive(false);

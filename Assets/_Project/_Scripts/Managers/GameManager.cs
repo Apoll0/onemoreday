@@ -38,16 +38,18 @@ public class GameManager : HMSingleton<GameManager>
 
     #region Init
 
-    private void Start()
+    private void Awake()
     {
         Initialize();
-        
+    }
+
+    private void Start()
+    {
         if(!SecurePlayerPrefs.HasKey("FirstStart"))
         {
             SecurePlayerPrefs.SetBool("FirstStart", true);
             SecurePlayerPrefs.Save();
             EnergyManager.Instance.StartInfiniteEnergyFor(900); // 15 minutes
-            
         }
         
         _ravenController.FlyIn();
@@ -172,11 +174,11 @@ public class GameManager : HMSingleton<GameManager>
 
     private IEnumerator ChangeDayAfterChoiceCoroutine(bool toLeft, bool forceGameOver = false)
     {
-        yield return new WaitForSeconds(GameConstants.StatChangeDuration);
+        yield return new WaitForSeconds(GameConstants.PauseAfterChoice);
         
         _mainUIManager.HideCurrentDayBlock(toLeft);
         
-        yield return  new WaitForSeconds(GameConstants.CardRotateDuration / 4f);
+        yield return new WaitForSeconds(GameConstants.CardChangePause);
 
         if (forceGameOver)
         {
@@ -291,6 +293,7 @@ public class GameManager : HMSingleton<GameManager>
     private void NoThanksTriggered()
     {
         MyDebug.Log("[GameManager] No thanks triggered. Returning to main menu.");
+        _mainUIManager.CompleteFirstGame();
         _mainUIManager.HideLastChanceBlock(() =>
         {
             SetStatsToPersistant();

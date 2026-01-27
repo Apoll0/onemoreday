@@ -51,7 +51,7 @@ public class UpgradesBlockController : MonoBehaviour
         }
 
         _refreshButtonContainer.DOKill();
-        _refreshButtonContainer.DOLocalMoveY(_refreshButtonContainerLocalPosY, GameConstants.CardRotateDuration / 2f);
+        _refreshButtonContainer.DOLocalMoveY(_refreshButtonContainerLocalPosY, GameConstants.ChoicesAppearDuration);
     }
 
     public void Hide(Action callback = null)
@@ -75,7 +75,7 @@ public class UpgradesBlockController : MonoBehaviour
         }
 
         _refreshButtonContainer.DOKill();
-        _refreshButtonContainer.DOLocalMoveY(-1500f, GameConstants.CardRotateDuration / 2f);
+        _refreshButtonContainer.DOLocalMoveY(-1500f, GameConstants.ChoicesAppearDuration);
     }
 
     #endregion
