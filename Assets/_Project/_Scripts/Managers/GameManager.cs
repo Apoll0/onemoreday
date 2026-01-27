@@ -152,26 +152,39 @@ public class GameManager : HMSingleton<GameManager>
     
     private void UpdateCurrentEventStats()
     {
-        int GetFactor()
+        int GetFactor(bool isMinus)
         {
             var factor = 1;
             var rnd = UnityEngine.Random.value;
-            factor = rnd switch
+
+            if (isMinus)
             {
-                > 0.9f => 3,
-                > 0.6f => 2,
-                _ => factor
-            };
+                factor = rnd switch
+                {
+                    > 0.9f => 3, // 10% chance to get triple negative effect
+                    > 0.6f => 2, // 30% chance to get double negative effect
+                    _ => factor
+                };   
+            }
+            else
+            {
+                factor = rnd switch
+                {
+                    > 0.95f => 3, // 5% chance to get triple positive effect
+                    > 0.75f => 2, // 20% chance to get double positive effect
+                    _ => factor
+                };    
+            }
             return factor;
         }
         
         for (int i = 0; i < _currentEventData.choices.Length; i++)
         {
             var choice = _currentEventData.choices[i];
-            choice.bodyEffect *= GetFactor();
-            choice.mindEffect *= GetFactor();
-            choice.suppliesEffect *= GetFactor();
-            choice.hopeEffect *= GetFactor();
+            choice.bodyEffect *= GetFactor(choice.bodyEffect < 0);
+            choice.mindEffect *= GetFactor(choice.mindEffect < 0);
+            choice.suppliesEffect *= GetFactor(choice.suppliesEffect < 0);
+            choice.hopeEffect *= GetFactor(choice.hopeEffect < 0);
         }
     }
 

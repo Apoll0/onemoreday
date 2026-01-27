@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 6a5b8a2a36f96425c94fd3565bb26d59
+guid: e2698f2c26265439285bd0b9d469a7a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -855298285791758126
-    second: 1_0
-  - first:
-      213: 9180251791023625898
-    second: 1_1
-  - first:
-      213: -549789443665989942
-    second: 1_2
-  - first:
-      213: -5167413608083449488
-    second: 1_3
+      213: 6155184837740117102
+    second: ic_plus_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -135,133 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Arrowss_0
+      name: ic_plus_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 25
-        height: 49
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73e6994f027fb400b8c965765a49bde6
-      internalID: 1986187441
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arrowss_1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 1
-        width: 34
-        height: 49
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bec78748c74ca435f9a612e42656580c
-      internalID: 1059154858
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arrowss_2
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 1
-        width: 34
-        height: 49
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26049a5fa016c4bbd81b01dd6a99c7bb
-      internalID: -2079042113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arrowss_3
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 19
-        width: 26
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0970107ebf446415c8237a8a7bdc62e2
-      internalID: -708544400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arrowss_4
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 9
         width: 26
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 927f40271b3f045ca98cff36e8abd812
-      internalID: -1263303048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arrowss_5
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 1
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0504c516ff2e42dc9628b62842dff0d
-      internalID: 1183027659
+      spriteID: e6cbe549ffb9b6550800000000000000
+      internalID: 6155184837740117102
       vertices: []
       indices: 
       edges: []
@@ -270,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 271bbf90a9f8b4b578e600fb84f36324
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -278,16 +159,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Arrowss_0: 1986187441
-      Arrowss_1: 1059154858
-      Arrowss_2: -2079042113
-      Arrowss_3: -708544400
-      Arrowss_4: -1263303048
-      Arrowss_5: 1183027659
+      ic_plus_0: 6155184837740117102
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

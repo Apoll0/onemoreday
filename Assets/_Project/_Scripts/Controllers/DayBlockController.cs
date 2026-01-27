@@ -8,13 +8,14 @@ using Random = UnityEngine.Random;
 public class DayBlockController : MonoBehaviour
 {
     private const float kCardsAngle = 60f;
+    private const float kAnimationTimeDiapason = 0.5f;
     
     //[SerializeField] private TextMeshProUGUI _caption;
     [SerializeField] private TextMeshProUGUI _picName;
     [SerializeField] private RectTransform   _cardRotation;
     [SerializeField] private Image           _image;
     [SerializeField] private ChoiceController[] _choices;
-    [SerializeField] private Transform       _choicesContainer;
+    [SerializeField] private Transform[]       _choiceContainers;
     [SerializeField] private RandomFlipImage[] _randomFlipImages;
 
     private float _choicesContainerLocalPosY;
@@ -45,9 +46,14 @@ public class DayBlockController : MonoBehaviour
             GameManager.Instance.EnableTouches();
             callback?.Invoke();
         });
-        
-        _choicesContainer.DOKill();
-        _choicesContainer.DOLocalMoveY(_choicesContainerLocalPosY, GameConstants.ChoicesAppearDuration).SetEase(Ease.OutCubic).SetDelay(GameConstants.ChoicesAppearDuration * 0.7f);
+
+        foreach (var choiceContainer in _choiceContainers)
+        {
+            choiceContainer.DOKill();
+            choiceContainer.DOLocalMoveY(_choicesContainerLocalPosY, GameConstants.ChoicesAppearDuration * Random.Range(1-kAnimationTimeDiapason,1+kAnimationTimeDiapason))
+                .SetEase(Ease.OutCubic)
+                .SetDelay(GameConstants.ChoicesAppearDuration * 0.7f);
+        }
     }
 
     public void HideTo(bool toLeft, Action callback = null)
@@ -62,8 +68,12 @@ public class DayBlockController : MonoBehaviour
             callback?.Invoke();
         });
 
-        _choicesContainer.DOKill();
-        _choicesContainer.DOLocalMoveY(-1500f, GameConstants.ChoicesAppearDuration / 2f).SetEase(Ease.InQuad);
+        foreach (var choiceContainer in _choiceContainers)
+        {
+            choiceContainer.DOKill();
+            choiceContainer.DOLocalMoveY(-1500f, (GameConstants.ChoicesAppearDuration / 2f) * Random.Range(1-kAnimationTimeDiapason,1+kAnimationTimeDiapason))
+                .SetEase(Ease.InQuad);    
+        }
     }
 
     public void OpenChoicesArrows()
@@ -93,10 +103,11 @@ public class DayBlockController : MonoBehaviour
 
     private void SetStartPositions()
     {
-        _choicesContainerLocalPosY = _choicesContainer.localPosition.y;
+        _choicesContainerLocalPosY = _choiceContainers[0].localPosition.y;
         _cardRotation.rotation = Quaternion.Euler(0f, 0f, kCardsAngle);
         
-        _choicesContainer.Translate(0,-1500f,0);
+        foreach (var choiceContainer in _choiceContainers)
+            choiceContainer.Translate(0, -1500f, 0);
     }
 
     private void InitChoices(EventData eventData)
@@ -105,6 +116,16 @@ public class DayBlockController : MonoBehaviour
         
         // отключить второй вариант выбора для событий с одним выбором
         _choices[1].gameObject.SetActive(eventData.choices.Length != 1);
+
+        if (_choices[1].gameObject.activeSelf)
+        {
+            _choiceContainers[0].GetComponent<RectTransform>().SetLocalX(-286.5f); // debug value!
+            _choiceContainers[1].GetComponent<RectTransform>().SetLocalX(286.5f);  // debug value!
+        }
+        else
+        {
+            _choiceContainers[0].GetComponent<RectTransform>().SetLocalX(0f);
+        }
 
         for (int i = 0; i < eventData.choices.Length && i < _choices.Length; i++)
         {

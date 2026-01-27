@@ -47,6 +47,7 @@ public class EventData
 public class Choice
 {
     public string text;
+    public bool forceQuestion; // for future use
     [ShowIf("ShowDeath")]
     [AllowNesting] 
     public bool isDeath;

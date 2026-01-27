@@ -7,8 +7,9 @@ public class StatBodyController : MonoBehaviour
     private const string kQuestionMarkSpriteName = "<sprite=0>";
     private const string kArrowUpSpriteName = "<sprite=3>";
     private const string kArrowDownSpriteName = "<sprite=2>";
+    private const string kMinusSpriteName = "<sprite=7>";
+    private const string kPlusSpriteName = "<sprite=8>";
     
-    //[SerializeField] private Sprite[] sprites;
     [SerializeField] private RollingTextAnimator _statText;
 
     public void SetStatArrow(int stat)
@@ -30,40 +31,20 @@ public class StatBodyController : MonoBehaviour
     public void OpenStatNumber(int stat)
     {
         if (stat > 0)
-            _statText.ChangeText($"+{stat}", true);
+        {
+            _statText.ChangeText($"<sprite=8>{stat}", true);
+        }
         else
-            _statText.ChangeText(stat.ToString(), false);
+            _statText.ChangeText($"<sprite=7>{-stat}", false);
     }
     
     public void OpenStatNumberQuick(int stat)
     {
         if (stat > 0)
-            _statText.ChangeTextQuick($"+{stat}");
-        else
-            _statText.ChangeTextQuick(stat.ToString());
-    }
-    
-    /*public void SetBodyImage(int stat) // 0 - question mark
-    {
-        _statText.gameObject.SetActive(false);
-        targetImage.gameObject.SetActive(true);
-        if(stat == 0)
         {
-            targetImage.sprite = sprites[^1];
-            return;
+            _statText.ChangeTextQuick($"<sprite=8>{stat}");
         }
-
-        stat = stat < 0 ? 0 : 1;
-        targetImage.sprite = sprites[stat];
-    }
-    
-    public void ShowStatText(int stat)
-    {
-        targetImage.gameObject.SetActive(false);
-        _statText.gameObject.SetActive(true);
-        if(stat > 0)
-            _statText.text = $"+{stat}";
         else
-            _statText.text = stat.ToString();
-    }*/
+            _statText.ChangeTextQuick($"<sprite=7>{-stat}");
+    }
 }

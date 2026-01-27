@@ -50,15 +50,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f969250ee97dd446283dcd8e2fef58e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayBlockController
-  _caption: {fileID: 0}
   _picName: {fileID: 9096181737021154468}
   _cardRotation: {fileID: 8608347780521993502}
   _image: {fileID: 3731026838751230043}
   _choices:
   - {fileID: 2438332656152717718}
   - {fileID: 287586075785158811}
-  _choicesContainer: {fileID: 5525790851662780770}
-  _randomFlipImages: []
+  _choiceContainers:
+  - {fileID: 6078466295060645562}
+  - {fileID: 8534330369400639415}
+  _randomFlipImages:
+  - {fileID: 3497664106824116264}
+  - {fileID: 4739775886972297892}
+  - {fileID: 1342413931109474597}
+  - {fileID: 7200153734586854313}
 --- !u!1 &1931815363404313272
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +367,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3310852436761224443}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 
@@ -718,19 +723,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_SizeDelta.x
@@ -770,7 +775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 286.5
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -859,6 +864,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24242b15b8c954db288b2d01b25f83d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChoiceController
+--- !u!114 &1342413931109474597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4935162343849439429, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
+  m_PrefabInstance: {fileID: 6258893364789727712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07114fba687f54deda683dc60fedcce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomFlipImage
 --- !u!1 &6189172650490347334 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 232029806896443046, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
@@ -920,6 +936,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7200153734586854313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3832594029507721801, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
+  m_PrefabInstance: {fileID: 6258893364789727712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07114fba687f54deda683dc60fedcce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomFlipImage
 --- !u!224 &8534330369400639415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
@@ -963,19 +990,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1015,7 +1042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -286.5
       objectReference: {fileID: 0}
     - target: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1097,6 +1124,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24242b15b8c954db288b2d01b25f83d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChoiceController
+--- !u!114 &3497664106824116264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4935162343849439429, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
+  m_PrefabInstance: {fileID: 8428217289138313453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07114fba687f54deda683dc60fedcce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomFlipImage
+--- !u!114 &4739775886972297892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3832594029507721801, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}
+  m_PrefabInstance: {fileID: 8428217289138313453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07114fba687f54deda683dc60fedcce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomFlipImage
 --- !u!224 &6078466295060645562 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2354263420936871511, guid: 29b8e3c84c00f4b84839c2d874d9d9d3, type: 3}

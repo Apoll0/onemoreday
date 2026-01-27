@@ -18,6 +18,7 @@ MonoBehaviour:
     description: You are shaking from the cold
     choices:
     - text: Burn an item
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -25,6 +26,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: -1
     - text: Endure
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -38,6 +40,7 @@ MonoBehaviour:
     description: A rusty can with food inside
     choices:
     - text: Eat it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -45,6 +48,7 @@ MonoBehaviour:
       suppliesEffect: 1
       hopeEffect: 0
     - text: Save it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -58,6 +62,7 @@ MonoBehaviour:
     description: The night was restless
     choices:
     - text: Sleep more
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -65,6 +70,7 @@ MonoBehaviour:
       suppliesEffect: 1
       hopeEffect: 0
     - text: Stay awake
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -78,6 +84,7 @@ MonoBehaviour:
     description: The wind cuts through you
     choices:
     - text: Find shelter
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -85,6 +92,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Keep going
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -98,6 +106,7 @@ MonoBehaviour:
     description: Every step hurts
     choices:
     - text: Fix them
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -105,6 +114,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Ignore it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -118,6 +128,7 @@ MonoBehaviour:
     description: Your stomach aches
     choices:
     - text: Eat everything
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -125,6 +136,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Save food
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -138,6 +150,7 @@ MonoBehaviour:
     description: "You can\u2019t see anything"
     choices:
     - text: Light a fire
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -145,6 +158,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 1
     - text: Wait it out
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -158,6 +172,7 @@ MonoBehaviour:
     description: Dirty, but warm
     choices:
     - text: Use them
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -165,6 +180,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Take them
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -178,6 +194,7 @@ MonoBehaviour:
     description: "You\u2019re getting soaked"
     choices:
     - text: Look for shelter
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -185,6 +202,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Keep moving
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -198,6 +216,7 @@ MonoBehaviour:
     description: "You\u2019re running out of strength"
     choices:
     - text: Rest
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -205,6 +224,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: -1
     - text: Push on
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -218,6 +238,7 @@ MonoBehaviour:
     description: "Mostly junk\u2026 but something useful"
     choices:
     - text: Take it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -225,6 +246,7 @@ MonoBehaviour:
       suppliesEffect: 1
       hopeEffect: 0
     - text: Leave it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -238,6 +260,7 @@ MonoBehaviour:
     description: Nothing happens.
     choices:
     - text: Walk
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -245,6 +268,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Wait
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -258,6 +282,7 @@ MonoBehaviour:
     description: Cold air seeps in
     choices:
     - text: Seal it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -265,6 +290,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Ignore it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -278,6 +304,7 @@ MonoBehaviour:
     description: Cloudy, but drinkable
     choices:
     - text: Drink
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -285,6 +312,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Save it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -298,6 +326,7 @@ MonoBehaviour:
     description: Anxiety creeps in
     choices:
     - text: Suppress it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -305,6 +334,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Give in
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -318,6 +348,7 @@ MonoBehaviour:
     description: Your body fails you
     choices:
     - text: Eat
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -325,6 +356,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Endure
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -338,6 +370,7 @@ MonoBehaviour:
     description: Something cracked nearby
     choices:
     - text: Check it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -345,6 +378,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Hide
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -353,6 +387,7 @@ MonoBehaviour:
       hopeEffect: -1
     choices2:
     - text: Check it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -360,6 +395,7 @@ MonoBehaviour:
       suppliesEffect: 1
       hopeEffect: 0
     - text: Hide
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -372,6 +408,7 @@ MonoBehaviour:
     description: Breathing is hard
     choices:
     - text: Cover your face
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -379,6 +416,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Ignore it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -392,6 +430,7 @@ MonoBehaviour:
     description: You remember your old life
     choices:
     - text: Dwell on it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -399,6 +438,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Forget it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -412,6 +452,7 @@ MonoBehaviour:
     description: Something useful lies nearby
     choices:
     - text: Take it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -419,6 +460,7 @@ MonoBehaviour:
       suppliesEffect: 1
       hopeEffect: 0
     - text: Move on
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -433,6 +475,7 @@ MonoBehaviour:
     description: Dark inside
     choices:
     - text: Explore
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -440,6 +483,7 @@ MonoBehaviour:
       suppliesEffect: 1
       hopeEffect: 0
     - text: Pass by
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -453,6 +497,7 @@ MonoBehaviour:
     description: Temperature drops fast
     choices:
     - text: Make a fire
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -460,6 +505,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Endure
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -473,6 +519,7 @@ MonoBehaviour:
     description: Someone was here
     choices:
     - text: Follow them
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -480,6 +527,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Avoid them
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -488,6 +536,7 @@ MonoBehaviour:
       hopeEffect: -1
     choices2:
     - text: Follow them
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -495,6 +544,7 @@ MonoBehaviour:
       suppliesEffect: 1
       hopeEffect: 0
     - text: Avoid them
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -507,6 +557,7 @@ MonoBehaviour:
     description: Something breaks.
     choices:
     - text: Fix it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -514,6 +565,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 1
     - text: Abandon it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -527,6 +579,7 @@ MonoBehaviour:
     description: Your mind spirals
     choices:
     - text: Fight them
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -534,6 +587,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Give up
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -547,6 +601,7 @@ MonoBehaviour:
     description: A lucky find
     choices:
     - text: Eat
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -554,6 +609,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Save it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -567,6 +623,7 @@ MonoBehaviour:
     description: "You can\u2019t see far"
     choices:
     - text: Move forward
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -574,6 +631,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Wait
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -587,6 +645,7 @@ MonoBehaviour:
     description: You could stay here
     choices:
     - text: Stay
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -594,6 +653,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Leave
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -607,6 +667,7 @@ MonoBehaviour:
     description: You hear someone scream
     choices:
     - text: Investigate
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -614,6 +675,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Ignore it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -622,6 +684,7 @@ MonoBehaviour:
       hopeEffect: -1
     choices2:
     - text: Investigate
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -629,6 +692,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Ignore it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -641,6 +705,7 @@ MonoBehaviour:
     description: The path is blocked
     choices:
     - text: Push through
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -648,6 +713,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Go around
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -661,6 +727,7 @@ MonoBehaviour:
     description: You are truly alone
     choices:
     - text: Accept it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -668,6 +735,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Fight it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -681,6 +749,7 @@ MonoBehaviour:
     description: Cold ashes remain
     choices:
     - text: Reuse it
+      forceQuestion: 1
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -688,6 +757,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Move on
+      forceQuestion: 1
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -701,6 +771,7 @@ MonoBehaviour:
     description: Every movement hurts
     choices:
     - text: Lie down
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -708,6 +779,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: -1
     - text: Keep moving
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -721,6 +793,7 @@ MonoBehaviour:
     description: Everything is wet
     choices:
     - text: Dry your gear
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -728,6 +801,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Endure
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -741,6 +815,7 @@ MonoBehaviour:
     description: You hesitate
     choices:
     - text: Decide
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -748,6 +823,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Hesitate
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -761,6 +837,7 @@ MonoBehaviour:
     description: You sense it nearby
     choices:
     - text: Search
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -768,6 +845,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Ignore
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -776,6 +854,7 @@ MonoBehaviour:
       hopeEffect: -1
     choices2:
     - text: Search
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -783,6 +862,7 @@ MonoBehaviour:
       suppliesEffect: 1
       hopeEffect: 0
     - text: Ignore
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -795,6 +875,7 @@ MonoBehaviour:
     description: Conditions deteriorate.
     choices:
     - text: Prepare
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -802,6 +883,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Hope for the best
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -815,6 +897,7 @@ MonoBehaviour:
     description: Too quiet
     choices:
     - text: Wait
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -822,6 +905,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: -1
     - text: Move
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -835,6 +919,7 @@ MonoBehaviour:
     description: You must choose
     choices:
     - text: Make a push
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -842,6 +927,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Stop
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -855,6 +941,7 @@ MonoBehaviour:
     description: Your thoughts blur
     choices:
     - text: Let go
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -862,6 +949,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: -1
     - text: Force yourself
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -876,6 +964,7 @@ MonoBehaviour:
     description: You are at the edge
     choices:
     - text: Take the risk
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 1
       bodyEffect: 0
@@ -883,6 +972,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Give up
+      forceQuestion: 0
       isDeath: 1
       isRandom2: 0
       bodyEffect: 0
@@ -896,6 +986,7 @@ MonoBehaviour:
     description: A rare moment of comfort
     choices:
     - text: Enjoy it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -903,6 +994,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Use it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -916,6 +1008,7 @@ MonoBehaviour:
     description: Something is gone
     choices:
     - text: Accept it
+      forceQuestion: 1
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -923,6 +1016,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Resist it
+      forceQuestion: 1
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -936,6 +1030,7 @@ MonoBehaviour:
     description: Nothing happens.
     choices:
     - text: Get through it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -949,6 +1044,7 @@ MonoBehaviour:
     description: You feel it rise
     choices:
     - text: Hold on
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -956,6 +1052,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Let go
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -969,6 +1066,7 @@ MonoBehaviour:
     description: Beyond this lies the unknown
     choices:
     - text: Cross it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -976,6 +1074,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Turn back
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -989,6 +1088,7 @@ MonoBehaviour:
     description: A painful decision
     choices:
     - text: Eat it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 1
@@ -996,6 +1096,7 @@ MonoBehaviour:
       suppliesEffect: -1
       hopeEffect: 0
     - text: Save it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -1009,6 +1110,7 @@ MonoBehaviour:
     description: It presses on you
     choices:
     - text: Listen
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -1016,6 +1118,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Ignore
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -1029,6 +1132,7 @@ MonoBehaviour:
     description: You see it far away
     choices:
     - text: Go toward it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -1036,6 +1140,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 1
     - text: Stay
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -1044,6 +1149,7 @@ MonoBehaviour:
       hopeEffect: -1
     choices2:
     - text: Go toward it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1
@@ -1051,6 +1157,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Stay
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -1063,6 +1170,7 @@ MonoBehaviour:
     description: You feel it coming
     choices:
     - text: Accept it
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: 0
@@ -1070,6 +1178,7 @@ MonoBehaviour:
       suppliesEffect: 0
       hopeEffect: 0
     - text: Fight
+      forceQuestion: 0
       isDeath: 0
       isRandom2: 0
       bodyEffect: -1

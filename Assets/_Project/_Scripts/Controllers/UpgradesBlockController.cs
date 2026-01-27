@@ -109,7 +109,7 @@ public class UpgradesBlockController : MonoBehaviour
         DataManager.Instance.SetPersistentStat(StatType.Supplies, DataManager.Instance.GetPersistentStat(StatType.Supplies) + _upgrades[index].choices[0].suppliesEffect);
         DataManager.Instance.SetPersistentStat(StatType.Hope, DataManager.Instance.GetPersistentStat(StatType.Hope) + _upgrades[index].choices[0].hopeEffect);
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         Hide(() =>
         {
             GameManager.Instance.EnableTouches();

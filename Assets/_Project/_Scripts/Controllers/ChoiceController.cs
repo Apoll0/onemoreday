@@ -14,6 +14,8 @@ public class ChoiceController : MonoBehaviour
     [SerializeField] private StatBodyController _statObjectMind;
     [SerializeField] private StatBodyController _statObjectSupp;
     [SerializeField] private StatBodyController _statObjectHope;
+    [SerializeField] private StatBodyController _statObjectRandom;
+    [SerializeField] private GameObject _deathIcon;
 
     public int ChoiceIndex => _choiceIndex;
     public bool isRandomChoice => _currentChoiceStats.isRandom2;
@@ -34,26 +36,46 @@ public class ChoiceController : MonoBehaviour
         _statObjectBody.gameObject.SetActive(false);
         _statObjectSupp.gameObject.SetActive(false);
         _statObjectHope.gameObject.SetActive(false);
+        _statObjectRandom.gameObject.SetActive(false);
+        _deathIcon.SetActive(choiceStats.isDeath);
         
         if (choiceStats.mindEffect != 0)
         {
             _statObjectMind.gameObject.SetActive(true);
-            _statObjectMind.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.mindEffect) : choiceStats.mindEffect);
+            if(choiceStats.forceQuestion)
+                _statObjectMind.SetStatArrow(0);
+            else
+                _statObjectMind.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.mindEffect) : choiceStats.mindEffect);
         }
         if (choiceStats.bodyEffect != 0)
         {
             _statObjectBody.gameObject.SetActive(true);
-            _statObjectBody.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.bodyEffect) : choiceStats.bodyEffect);
+            if (choiceStats.forceQuestion)
+                _statObjectBody.SetStatArrow(0);
+            else
+                _statObjectBody.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.bodyEffect) : choiceStats.bodyEffect);
         }
         if (choiceStats.suppliesEffect != 0)
         {
             _statObjectSupp.gameObject.SetActive(true);
-            _statObjectSupp.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.suppliesEffect) : choiceStats.suppliesEffect);
+            if (choiceStats.forceQuestion)
+                _statObjectSupp.SetStatArrow(0);
+            else
+                _statObjectSupp.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.suppliesEffect) : choiceStats.suppliesEffect);
         }
         if (choiceStats.hopeEffect != 0)
         {
             _statObjectHope.gameObject.SetActive(true);
-            _statObjectHope.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.hopeEffect) : choiceStats.hopeEffect);
+            if (choiceStats.forceQuestion)
+                _statObjectHope.SetStatArrow(0);
+            else
+                _statObjectHope.SetStatArrow(canBeQuestion ? ConvertStatWithProbability(choiceStats.hopeEffect) : choiceStats.hopeEffect);
+        }
+
+        if (choiceStats.isRandom2) // special case for random choice
+        {
+            _statObjectRandom.gameObject.SetActive(true);
+            _statObjectRandom.SetStatArrow(0);
         }
     }
 
@@ -74,22 +96,28 @@ public class ChoiceController : MonoBehaviour
     
     public void OpenRandomStatArrow(StatType statType, int value)
     {
+        _statObjectRandom.gameObject.SetActive(false);
+        
         switch (statType)
         {
             case StatType.Body:
                 _statObjectBody.gameObject.SetActive(true);
+                _statObjectBody.SetStatArrow(0);
                 _statObjectBody.OpenStatNumber(value);
                 break;
             case StatType.Mind:
                 _statObjectMind.gameObject.SetActive(true);
+                _statObjectMind.SetStatArrow(0);
                 _statObjectMind.OpenStatNumber(value);
                 break;
             case StatType.Supplies:
                 _statObjectSupp.gameObject.SetActive(true);
+                _statObjectSupp.SetStatArrow(0);
                 _statObjectSupp.OpenStatNumber(value);
                 break;
             case StatType.Hope:
                 _statObjectHope.gameObject.SetActive(true);
+                _statObjectHope.SetStatArrow(0);
                 _statObjectHope.OpenStatNumber(value);
                 break;
         }
