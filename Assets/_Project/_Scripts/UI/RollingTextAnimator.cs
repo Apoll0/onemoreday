@@ -14,6 +14,12 @@ public class RollingTextAnimator : MonoBehaviour
 
     public void ChangeTextQuick(string newText)
     {
+        if (!gameObject.activeSelf)
+        {
+            _currentText.text = newText;
+            return;
+        }
+        
         // Если сейчас выполняется анимация – прерываем её для замены текста
         if (animationCoroutine != null)
         {
@@ -29,6 +35,12 @@ public class RollingTextAnimator : MonoBehaviour
     // Метод для смены текста на новый текст (без промежуточных значений)
     public void ChangeText(string newText, bool directionUp)
     {
+        if (!gameObject.activeSelf)
+        {
+            _currentText.text = newText;
+            return;
+        }
+        
         // Если сейчас выполняется анимация – прерываем её для замены текста
         if (animationCoroutine != null)
         {
@@ -41,6 +53,12 @@ public class RollingTextAnimator : MonoBehaviour
 
     public void ChangeNumberQuick(int newNumber)
     {
+        if (!gameObject.activeSelf)
+        {
+            _currentText.text = newNumber.ToString();
+            return;
+        }
+        
         // Если сейчас выполняется анимация – прерываем её для замены числа
         if (animationCoroutine != null)
         {
@@ -56,6 +74,12 @@ public class RollingTextAnimator : MonoBehaviour
     // Метод для смены текущего числа на новое с перебором промежуточных значений
     public void ChangeNumber(int newNumber)
     {
+        if (!gameObject.activeSelf)
+        {
+            _currentText.text = newNumber.ToString();
+            return;
+        }
+        
         // Если уже идёт анимация, просто обновляем цель – корутина подхватит новое значение
         targetNumber = newNumber;
         if (animationCoroutine == null)

@@ -11,13 +11,6 @@ public class LastChanceBlockController : MonoBehaviour
     public static event Action OnOneMoreDayTriggered;
     public static event Action OnNoThanksTriggered;
     
-    [SerializeField] private TextMeshProUGUI _caption;
-    [Space]
-    //[SerializeField] private GameObject      _bodyPic;
-    //[SerializeField] private GameObject      _mindPic;
-    //[SerializeField] private GameObject      _supplyPic;
-    //[SerializeField] private GameObject      _hopePic;
-    [Space]
     [SerializeField] private RectTransform   _cardRotation;
     [SerializeField] private Image           _image;
     [SerializeField] private Transform       _buttonsBlock;
@@ -32,35 +25,6 @@ public class LastChanceBlockController : MonoBehaviour
     }
 
     #region Public methods
-
-    public void InitWithStatType(StatType statType)
-    {
-        //_bodyPic.SetActive(false);
-        //_mindPic.SetActive(false);
-        //_supplyPic.SetActive(false);
-        //_hopePic.SetActive(false);
-        
-        _caption.gameObject.SetActive(true);
-        switch (statType)
-        {
-            case StatType.Body:
-                //_bodyPic.SetActive(true);
-                _caption.text = "Your body couldn’t go any further";
-                break;
-            case StatType.Mind:
-                //_mindPic.SetActive(true);
-                _caption.text = "Your mind finally broke";
-                break;
-            case StatType.Supplies:
-                //_supplyPic.SetActive(true);
-                _caption.text = "There was nothing left";
-                break;
-            case StatType.Hope:
-                //_hopePic.SetActive(true);
-                _caption.text = "You lost the will to continue";
-                break;
-        }
-    }
 
     public void ShowFrom(bool fromLeft, Action callback = null)
     {
@@ -89,7 +53,7 @@ public class LastChanceBlockController : MonoBehaviour
         
         _buttonsBlock.transform.DOLocalMoveY(-1500f, GameConstants.ChoicesAppearDuration).OnComplete(() =>
         {
-            _caption.gameObject.SetActive(false);
+            //_caption.gameObject.SetActive(false);
         });
     }
     
@@ -103,7 +67,7 @@ public class LastChanceBlockController : MonoBehaviour
         _cardRotation.rotation = Quaternion.Euler(0f, 0f, kCardsAngle);
         
         _buttonsBlock.transform.Translate(new Vector3(0, -1500f, 0f));
-        _caption.gameObject.SetActive(false);
+        //_caption.gameObject.SetActive(false);
     }
 
     private void StartVideoButtonAnimation()
@@ -124,8 +88,8 @@ public class LastChanceBlockController : MonoBehaviour
     public void OneMoreDayPressed()
     {
         _buttonAnimationTween?.Kill();
-        // TODO: Implement one more day logic
-        // Show video
+        
+        // TODO: Show video
         OnOneMoreDayTriggered?.Invoke(); // TODO: Предусмотреть отказ от просмотра видео
     }
 

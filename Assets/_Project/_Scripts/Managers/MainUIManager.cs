@@ -6,12 +6,15 @@ using UnityEngine;
 public class MainUIManager : MonoBehaviour
 {
     private const string kFirstGameCompleted = "FirstGameCompleted";
+    private const string kDefaultDescription = "How long can you last?";
+    private const string kUpgradesDescription = "Choose what matters";
 
     #region Exposed variables
 
     [SerializeField] private GameObject _viewsContainer;
     [SerializeField] private GameObject _startView;
     [SerializeField] private RollingTextAnimator _dynamicCaption;
+    [SerializeField] private RollingTextAnimator _descriptionRoller;
     [SerializeField] private TextMeshProUGUI _bestNumberText;
     [SerializeField] private DayBlockController[] _dayBlockControllers;
     [SerializeField] private LastChanceBlockController _lastChanceBlockController;
@@ -96,6 +99,7 @@ public class MainUIManager : MonoBehaviour
     public void ShowNewDayBlock(EventData eventData, Action callback = null)
     {
         _dynamicCaption.ChangeText("day " + DataManager.Instance.CurrentDay, false);
+        _descriptionRoller.ChangeText(eventData.description, true);
         ChangeDayBlockIndex();
         _dayBlockControllers[_currentDayBlockIndex].InitWithEventData(eventData);
         _dayBlockControllers[_currentDayBlockIndex].ShowFrom(!_lastMoveSideToLeft, callback);
@@ -110,13 +114,31 @@ public class MainUIManager : MonoBehaviour
     public void ShowLastChanceBlock(StatType failStat)
     {
         HapticPatterns.PlayPreset(HapticPatterns.PresetType.HeavyImpact);
-        _lastChanceBlockController.InitWithStatType(failStat);
+
+        var desc = "";
+        switch (failStat)
+        {
+            case StatType.Body:
+                desc= "Your body couldn’t go any further";
+                break;
+            case StatType.Mind:
+                desc = "Your mind finally broke";
+                break;
+            case StatType.Supplies:
+                desc = "There was nothing left";
+                break;
+            case StatType.Hope:
+                desc = "You lost the will to continue";
+                break;
+        }
+        _descriptionRoller.ChangeText(desc, true);
         _lastChanceBlockController.ShowFrom(!_lastMoveSideToLeft);
     }
     
     public void ShowUpgradesBlock(Action callback = null)
     {
         _dynamicCaption.ChangeText("one more day", false);
+        _descriptionRoller.ChangeText("Choose what matters", true);
         _upgradesBlockController.Show(callback);
     }
 
@@ -127,6 +149,7 @@ public class MainUIManager : MonoBehaviour
     
     public void ShowStartView()
     {
+        _descriptionRoller.ChangeTextQuick(kDefaultDescription);
         _bestNumberText.text = DataManager.Instance.MaxDayReached + " days";
         UpdateEnergyValue();
         UpdateEnergyTimerText();

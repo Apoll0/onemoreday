@@ -3,15 +3,17 @@ using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class UpgradesBlockController : MonoBehaviour
 {
+    private const float kCardsTopY = 2500f;
+    
     public static event Action OnUpgradeApplyed;
     
-    [SerializeField] private TextMeshProUGUI _caption;
-    [SerializeField] private RectTransform[]   _cardRotations;
+    [FormerlySerializedAs("_cardRotations")] [SerializeField] private RectTransform[]   _cards;
     [SerializeField] private TextMeshProUGUI[] _picNames;
     [SerializeField] private Image[]           _images;
     [SerializeField] private TextMeshProUGUI[] _descriptions;
@@ -20,6 +22,7 @@ public class UpgradesBlockController : MonoBehaviour
 
     private EventData[] _upgrades = new EventData[2];
     private float _refreshButtonContainerLocalPosY;
+    private float[] _cardsLocalPosY = new float[2];
     
     private void Awake()
     {
@@ -33,15 +36,15 @@ public class UpgradesBlockController : MonoBehaviour
         InitWithUpgrades();
         GameManager.Instance.DisableTouches();
 
-        for (int i = 0; i < _cardRotations.Length; i++)
+        for (int i = 0; i < _cards.Length; i++)
         {
-            _cardRotations[i].DOKill();
-            _cardRotations[i].rotation = Quaternion.Euler(0f, 0f, i == 0 ? 90f : -90f);
+            _cards[i].DOKill();
             
-            bool lastIteration = i == _cardRotations.Length - 1;
-            _cardRotations[i].DORotate(new Vector3(0, 0, 0), GameConstants.CardRotateDuration).OnComplete(() =>
+            bool lastIteration = i == _cards.Length - 1;
+            _cards[i].DOLocalMoveY(_cardsLocalPosY[i], GameConstants.CardRotateDuration)
+                .SetEase(Ease.OutQuad)
+                .OnComplete(() =>
             {
-                _caption.gameObject.SetActive(true);
                 if (lastIteration)
                 {
                     GameManager.Instance.EnableTouches();
@@ -56,15 +59,15 @@ public class UpgradesBlockController : MonoBehaviour
 
     public void Hide(Action callback = null)
     {
-        _caption.gameObject.SetActive(false);
-        
         GameManager.Instance.DisableTouches();
 
-        for (int i = 0; i < _cardRotations.Length; i++)
+        for (int i = 0; i < _cards.Length; i++)
         {
-            _cardRotations[i].DOKill();
-            bool lastIteration = i == _cardRotations.Length - 1;
-            _cardRotations[i].DORotate(new Vector3(0,0, i == 0 ? 90f : -90f), GameConstants.CardRotateDuration).OnComplete(() =>
+            _cards[i].DOKill();
+            bool lastIteration = i == _cards.Length - 1;
+            _cards[i].DOLocalMoveY(kCardsTopY, GameConstants.CardRotateDuration)
+                .SetEase(Ease.InQuad)
+                .OnComplete(() =>
             {
                 if (lastIteration)
                 {
@@ -140,20 +143,20 @@ public class UpgradesBlockController : MonoBehaviour
             _descriptions[i].text = upgrade.description;
 
             var stats = upgrade.choices[0]; // Всегда берем первый, в апгрейдах всегда один выбор
-            _statGroupControllers[i].SetStat(StatType.Body, stats.bodyEffect);
-            _statGroupControllers[i].SetStat(StatType.Mind, stats.mindEffect);
-            _statGroupControllers[i].SetStat(StatType.Supplies, stats.suppliesEffect);
-            _statGroupControllers[i].SetStat(StatType.Hope, stats.hopeEffect);
+            _statGroupControllers[i].SetStat(StatType.Body, stats.bodyEffect, true);
+            _statGroupControllers[i].SetStat(StatType.Mind, stats.mindEffect, true);
+            _statGroupControllers[i].SetStat(StatType.Supplies, stats.suppliesEffect, true);
+            _statGroupControllers[i].SetStat(StatType.Hope, stats.hopeEffect, true);
         }
     }
 
     private void SetStartPositions()
     {
-        _caption.gameObject.SetActive(false);
         _refreshButtonContainerLocalPosY = _refreshButtonContainer.localPosition.y;
-        for (int i = 0; i < _cardRotations.Length; i++)
+        for (int i = 0; i < _cards.Length; i++)
         {
-            _cardRotations[i].rotation = Quaternion.Euler(0f, 0f, i == 0 ? 90f : -90f);
+            _cardsLocalPosY[i] = _cards[i].localPosition.y;
+            _cards[i].Translate(0,kCardsTopY,0);
         }
         
         _refreshButtonContainer.Translate(0,-1500f,0);

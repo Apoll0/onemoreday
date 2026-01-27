@@ -9,7 +9,7 @@ public class DayBlockController : MonoBehaviour
 {
     private const float kCardsAngle = 60f;
     
-    [SerializeField] private TextMeshProUGUI _caption;
+    //[SerializeField] private TextMeshProUGUI _caption;
     [SerializeField] private TextMeshProUGUI _picName;
     [SerializeField] private RectTransform   _cardRotation;
     [SerializeField] private Image           _image;
@@ -28,7 +28,6 @@ public class DayBlockController : MonoBehaviour
 
     public void InitWithEventData(EventData eventData)
     {
-        _caption.text = eventData.description;
         _picName.text = eventData.name;
         eventData.LoadImageAsync("Ills/", _image);
         InitChoices(eventData);
@@ -43,7 +42,6 @@ public class DayBlockController : MonoBehaviour
             .SetEase(Ease.InOutCubic)
             .OnComplete(() =>
         {
-            _caption.gameObject.SetActive(true);
             GameManager.Instance.EnableTouches();
             callback?.Invoke();
         });
@@ -54,8 +52,6 @@ public class DayBlockController : MonoBehaviour
 
     public void HideTo(bool toLeft, Action callback = null)
     {
-        _caption.gameObject.SetActive(false);
-        
         GameManager.Instance.DisableTouches();
         _cardRotation.DOKill();
         _cardRotation.DORotate(new Vector3(0, 0, toLeft ? kCardsAngle : -kCardsAngle), GameConstants.CardRotateDuration)
@@ -74,7 +70,8 @@ public class DayBlockController : MonoBehaviour
     {
         foreach (var choiceController in _choices)
         {
-            choiceController.OpenArrows();
+            if(choiceController.gameObject.activeSelf)
+                choiceController.OpenArrows();
         }
     }
 
@@ -96,7 +93,6 @@ public class DayBlockController : MonoBehaviour
 
     private void SetStartPositions()
     {
-        _caption.gameObject.SetActive(false);
         _choicesContainerLocalPosY = _choicesContainer.localPosition.y;
         _cardRotation.rotation = Quaternion.Euler(0f, 0f, kCardsAngle);
         

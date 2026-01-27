@@ -19,7 +19,8 @@ MonoBehaviour:
   _midEventChance: 0.4
   _firstQuestionProbability: 0.5
   _everyQuestionProbability: 0.2
-  _cardRotateDuration: 3
-  _cardChangePause: 0.2
-  _pauseAfterChoice: 0.5
+  _cardRotateDuration: 0.5
+  _choicesAppearDuration: 0.4
+  _cardChangePause: 0
+  _pauseAfterChoice: 0.8
   _waitLastChanceDuration: 5

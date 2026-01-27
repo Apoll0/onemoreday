@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using DG.Tweening;
 using Lofelt.NiceVibrations;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Random = System.Random;
@@ -155,10 +156,12 @@ public class GameManager : HMSingleton<GameManager>
         {
             var factor = 1;
             var rnd = UnityEngine.Random.value;
-            if(rnd > 0.9f)
-                factor = 3;
-            else if(rnd > 0.6f)
-                factor = 2;
+            factor = rnd switch
+            {
+                > 0.9f => 3,
+                > 0.6f => 2,
+                _ => factor
+            };
             return factor;
         }
         
@@ -204,6 +207,15 @@ public class GameManager : HMSingleton<GameManager>
         return false;
     }
 
+    private void UpdateStatsOneMoreDay()
+    {
+        foreach (StatType statType in Enum.GetValues(typeof(StatType)))
+        {
+            if(DataManager.Instance.GetStat(statType) <= 0)
+                DataManager.Instance.SetStat(statType, 1);
+        }
+    }
+    
     private void CorrectStatsFromPersistant()
     {
         foreach (StatType statType in Enum.GetValues(typeof(StatType)))
@@ -222,6 +234,15 @@ public class GameManager : HMSingleton<GameManager>
         _mainUIManager.ShowLastChanceBlock(statType);
     }
 
+    [Button(enabledMode:EButtonEnableMode.Playmode)]
+    private void DebugSetLowStats()
+    {
+        DataManager.Instance.SetStat(StatType.Body, 1);
+        DataManager.Instance.SetStat(StatType.Mind, 1);
+        DataManager.Instance.SetStat(StatType.Supplies, 1);
+        DataManager.Instance.SetStat(StatType.Hope, 1);
+    }
+    
     #endregion
 
     #region Delegates
@@ -285,7 +306,7 @@ public class GameManager : HMSingleton<GameManager>
         _mainUIManager.HideLastChanceBlock(() =>
         {
             CurrentGameState = GameState.InGame;
-            CorrectStatsFromPersistant();
+            UpdateStatsOneMoreDay();
             BeginNewDay();
         });
     }

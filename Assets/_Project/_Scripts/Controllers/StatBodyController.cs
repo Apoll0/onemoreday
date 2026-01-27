@@ -35,6 +35,14 @@ public class StatBodyController : MonoBehaviour
             _statText.ChangeText(stat.ToString(), false);
     }
     
+    public void OpenStatNumberQuick(int stat)
+    {
+        if (stat > 0)
+            _statText.ChangeTextQuick($"+{stat}");
+        else
+            _statText.ChangeTextQuick(stat.ToString());
+    }
+    
     /*public void SetBodyImage(int stat) // 0 - question mark
     {
         _statText.gameObject.SetActive(false);
