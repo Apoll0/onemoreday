@@ -16,6 +16,8 @@ public class DataManager : HMSingleton<DataManager>
     private readonly string kCurrentDayPref = "CurrentDay";
     private readonly string kMaxDayReached = "MaxDayReached";
     private readonly string kScullsCountPref = "ScullsCount";
+    private readonly string kRemoveAdsPref = "RemoveAdsPurchased";
+    
     private const int kMaxScullsCount = 182;
 
     #endregion
@@ -58,6 +60,19 @@ public class DataManager : HMSingleton<DataManager>
             SecurePlayerPrefs.SetInt(kScullsCountPref, clampedValue);
             SecurePlayerPrefs.Save();
             OnScullsCountChanged?.Invoke(clampedValue);
+        }
+    }
+
+    public bool RemoveAdsPurchased
+    {
+        get => SecurePlayerPrefs.GetBool(kRemoveAdsPref);
+        set
+        {
+            if (value)
+                SecurePlayerPrefs.SetBool(kRemoveAdsPref, true);
+            else
+                SecurePlayerPrefs.DeleteKey(kRemoveAdsPref);
+            SecurePlayerPrefs.Save();
         }
     }
     

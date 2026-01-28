@@ -10,6 +10,7 @@ public class GameConstants : HMScriptableSingleton<GameConstants>
     [SerializeField] private float _midEventChance = 0.4f;
     [SerializeField] private float _firstQuestionProbability = 0.5f;
     [SerializeField] private float _everyQuestionProbability = 0.2f;
+    [SerializeField] private string _termsOfServiceURL = "https://happymagenta.com/tmp/privacy.html";
     
     [Header("Animations")]
     [SerializeField] private float _cardRotateDuration = 0.5f;
@@ -32,6 +33,7 @@ public class GameConstants : HMScriptableSingleton<GameConstants>
     public static float CardChangePause => Instance._cardChangePause;
     public static float PauseAfterChoice => Instance._pauseAfterChoice;
     public static float WaitLastChanceDuration => Instance._waitLastChanceDuration;
+    public static string TermsOfServiceURL => Instance._termsOfServiceURL;
     
 
     #endregion

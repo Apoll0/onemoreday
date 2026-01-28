@@ -250,6 +250,8 @@ public class ButtonExt : MonoBehaviour,
 	private void Highlight()
 	{
 		state = ButtonExtState.Highlighted;
+		if(!_useCustomAudioData)
+			SoundManager.Instance.PlaySound(AudioData.ButtonClickSound);
 		//SoundManager.Instance.PlayAudioClip(_useCustomAudioData ? _customAudioData : SoundsData.ButtonClick);
 		HapticPatterns.PlayPreset(HapticPatterns.PresetType.LightImpact);
 		_doHighlight = false;

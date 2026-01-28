@@ -47,8 +47,10 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.3.4f1/Unity.app/Contents/Resources/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/_Project/_Scripts/Controllers/SettingsPopupController.cs" />
     <Compile Include="Assets/_Project/_Scripts/Managers/EnergyManager.cs" />
     <Compile Include="Assets/_Project/_Scripts/SO/UpgradesData.cs" />
+    <Compile Include="Assets/_Project/_Scripts/Managers/SoundManager.cs" />
     <Compile Include="Assets/_Project/_Scripts/Controllers/StatBlockController.cs" />
     <Compile Include="Assets/HM/HMSingleton/HMSingleton.cs" />
     <Compile Include="Assets/HM/HMTimeManager/SecurePlayerPrefs.cs" />
@@ -77,6 +79,7 @@
     <Compile Include="Assets/SecurePlayerPrefs/Plugins/SecurePlayerPrefs/Demo/SecurePlayerPrefsDemo.cs" />
     <Compile Include="Assets/_Project/_Scripts/Extensions/ColorExtensions.cs" />
     <Compile Include="Assets/PlayerPrefsEditor/SimpleEncryption.cs" />
+    <Compile Include="Assets/_Project/_Scripts/SO/AudioData.cs" />
     <Compile Include="Assets/_Project/_Scripts/UI/ButtonScripts/ButtonExt.cs" />
     <Compile Include="Assets/_Project/_Scripts/Utils/DeviceInfo.cs" />
     <Compile Include="Assets/PlayerPrefsEditor/PlayerPrefsUtility.cs" />

@@ -18,12 +18,15 @@ public class RavenController : MonoBehaviour
     public void FlyIn()
     {
         _flySequence?.Kill();
+        
         _animator.enabled = true;
         _raven.position = _enterPoint.position;
         _animator.SetBool(kAnimatorFly, true);
-        
+
+        SoundManager.Instance.PlaySound(AudioData.RavenSitSound);
         _flySequence = DOTween.Sequence();
         _flySequence.Append(_raven.DOMove(_trashPoint.position, 0.7f).SetEase(Ease.OutQuad));
+        //_flySequence.AppendCallback(() => SoundManager.Instance.PlaySound(AudioData.RavenSitSound));
         _flySequence.AppendInterval(0.3f);
         _flySequence.AppendCallback(() => _animator.SetBool(kAnimatorFly, false));
         
@@ -35,6 +38,7 @@ public class RavenController : MonoBehaviour
     {
         _flySequence?.Kill();
         
+        SoundManager.Instance.PlaySound(AudioData.RavenFlyAwaySound);
         _raven.position = _trashPoint.position;
         _animator.SetBool(kAnimatorFly, true);
         _raven.DOMove(_exitPoint.position, 1.5f).OnComplete(() => _animator.enabled = false);

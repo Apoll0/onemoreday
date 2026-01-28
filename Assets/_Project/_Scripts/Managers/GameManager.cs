@@ -80,6 +80,9 @@ public class GameManager : HMSingleton<GameManager>
     {
         HMTimeManager.Instance.Initialize();
         EnergyManager.Instance.Initialize();
+        SoundManager.Instance.Initialize();
+        
+        SoundManager.Instance.PlayMusics(AudioData.MusicClip1, AudioData.MusicClip2);
         
         SetStatsToPersistant();
     }

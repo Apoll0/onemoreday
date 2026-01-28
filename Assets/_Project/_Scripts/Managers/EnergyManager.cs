@@ -65,9 +65,10 @@ public class EnergyManager : HMSingleton<EnergyManager>
 
     public bool IsInfiniteEnergy()
     {
-        var timeForInfinite = SecurePlayerPrefs.GetInt(kPrefsInfiniteEnergySeconds);
-        var timeLeft = HMTimeManager.Instance.FireTimeForKey(kPrefsInfiniteEnergyTimeStamp, timeForInfinite);
-        return timeLeft > 0;
+        //var timeForInfinite = SecurePlayerPrefs.GetInt(kPrefsInfiniteEnergySeconds);
+        //var timeLeft = HMTimeManager.Instance.FireTimeForKey(kPrefsInfiniteEnergyTimeStamp, timeForInfinite);
+        //return timeLeft > 0;
+        return InifiniteEnergyTimeLeft() > 0;
     }
 
     public int InifiniteEnergyTimeLeft()
@@ -168,6 +169,12 @@ public class EnergyManager : HMSingleton<EnergyManager>
                 var currentState = IsInfiniteEnergy();
                 if (!currentState) // infinite life ended
                 {
+                    if (_isInfiniteEnergy)
+                    {
+                        SecurePlayerPrefs.DeleteKey(kPrefsInfiniteEnergySeconds);
+                        HMTimeManager.Instance.RemoveTimeStampForKey(kPrefsInfiniteEnergyTimeStamp);
+                    }
+                    
                     _isInfiniteEnergy = false;
                     OnEnergyCountChanged?.Invoke();
                 }

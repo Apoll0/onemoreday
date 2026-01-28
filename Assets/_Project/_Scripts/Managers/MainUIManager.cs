@@ -27,6 +27,8 @@ public class MainUIManager : MonoBehaviour
     [SerializeField] private GameObject _energyInfinite;
     [SerializeField] private GameObject _videoSignStartButton;
     [SerializeField] private GameObject _bestBlock;
+    [SerializeField] private GameObject _settingsPopup;
+    [SerializeField] private GameObject _settingsButton;
 
     #endregion
 
@@ -79,7 +81,7 @@ public class MainUIManager : MonoBehaviour
 
     public void SettingsButtonPressed()
     {
-        // TODO: Implement settings UI
+        _settingsPopup.SetActive(true);
     }
 
     #endregion
@@ -175,6 +177,10 @@ public class MainUIManager : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Delegate
+
     private void UpdateEnergyValue()
     {
         var energy = EnergyManager.Instance.EnergyCount;
@@ -216,6 +222,14 @@ public class MainUIManager : MonoBehaviour
             _energyTimerText.text = "full"; // TODO: Localization
         }
     }
+
+    private void OnSettingsClosed()
+    {
+        _descriptionRoller.gameObject.SetActive(true);
+        _settingsButton.SetActive(true);
+    }
+    
+    
     
     #endregion
 }

@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Core", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaughtyAttributes.Editor", "NaughtyAttributes.Editor.csproj", "{0a930f3d-5a80-b145-6a7c-794909ba2220}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lofelt.NiceVibrations", "Lofelt.NiceVibrations.csproj", "{b93a91db-9d51-182c-35d3-baf35698b53e}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{7db0fe54-aed1-6f87-de70-77bd3725da49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lofelt.NiceVibrations", "Lofelt.NiceVibrations.csproj", "{b93a91db-9d51-182c-35d3-baf35698b53e}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{80e0004a-d58f-3753-986d-470f60700a38}"
 EndProject
@@ -36,10 +36,10 @@ Global
 		{d0ccb22e-e0bb-1e79-4243-2d4000955aa6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0a930f3d-5a80-b145-6a7c-794909ba2220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0a930f3d-5a80-b145-6a7c-794909ba2220}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{b93a91db-9d51-182c-35d3-baf35698b53e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{b93a91db-9d51-182c-35d3-baf35698b53e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7db0fe54-aed1-6f87-de70-77bd3725da49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7db0fe54-aed1-6f87-de70-77bd3725da49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b93a91db-9d51-182c-35d3-baf35698b53e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b93a91db-9d51-182c-35d3-baf35698b53e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80e0004a-d58f-3753-986d-470f60700a38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{80e0004a-d58f-3753-986d-470f60700a38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{fc7c0f95-c2ba-6f4f-830d-13083f61d4e4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
